@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { Facebook, Linkedin, Instagram, Mail } from "lucide-react";
+import logoAsset from "@/assets/eburnie-logo.png.asset.json";
 
 const subsidiaries = [
   { name: "Eburnie Boutique", url: "https://boutique.eburniecorporation.com" },
@@ -26,9 +27,7 @@ export function SiteFooter() {
       <div className="mx-auto max-w-7xl px-6 lg:px-10 py-20 grid gap-12 lg:grid-cols-12">
         <div className="lg:col-span-4">
           <div className="flex items-center gap-3">
-            <div className="h-11 w-11 rounded-sm bg-gradient-gold flex items-center justify-center">
-              <span className="text-prestige font-display font-bold text-lg">E</span>
-            </div>
+            <img src={logoAsset.url} alt="Eburnie Corporation" className="h-14 w-14 object-contain" />
             <div className="leading-tight">
               <div className="font-display font-bold tracking-[0.18em]">EBURNIE</div>
               <div className="text-[10px] tracking-[0.32em] text-white/60">CORPORATION</div>

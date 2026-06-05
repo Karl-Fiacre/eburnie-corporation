@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
+import logoAsset from "@/assets/eburnie-logo.png.asset.json";
 
 const links = [
   { to: "/", label: "Accueil" },
@@ -34,9 +35,7 @@ export function SiteNavbar() {
     >
       <div className="mx-auto max-w-7xl px-6 lg:px-10 h-20 flex items-center justify-between">
         <Link to="/" className="flex items-center gap-3 group" onClick={() => setOpen(false)}>
-          <div className="h-10 w-10 rounded-sm bg-gradient-gold flex items-center justify-center shadow-gold">
-            <span className="text-prestige font-display font-bold text-lg">E</span>
-          </div>
+          <img src={logoAsset.url} alt="Eburnie Corporation" className="h-12 w-12 object-contain" />
           <div className="leading-tight">
             <div className="font-display font-bold text-sm tracking-[0.18em] text-foreground">
               EBURNIE

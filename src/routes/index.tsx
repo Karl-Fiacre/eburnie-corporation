@@ -65,7 +65,7 @@ function HomePage() {
         <div className="absolute inset-0 bg-gradient-to-r from-prestige via-prestige/85 to-prestige/30" />
         <div className="absolute inset-0 bg-gradient-to-t from-prestige via-transparent to-prestige/40" />
 
-        <div className="relative mx-auto max-w-7xl px-6 lg:px-10 pt-32 pb-20 w-full">
+        <div className="relative mx-auto max-w-7xl px-6 lg:px-10 pt-32 pb-56 w-full">
           <div className="max-w-3xl">
             <div className="flex items-center gap-3 text-xs tracking-[0.32em] text-gold animate-fade-up">
               <span className="h-px w-10 bg-gold" />
@@ -97,12 +97,12 @@ function HomePage() {
           </div>
         </div>
 
-        <div className="absolute bottom-0 inset-x-0 border-t border-white/10 bg-prestige/60 backdrop-blur">
+        <div className="absolute bottom-0 inset-x-0 border-t border-white/10 bg-prestige/80 backdrop-blur">
           <div className="mx-auto max-w-7xl px-6 lg:px-10 grid grid-cols-2 md:grid-cols-4">
             {stats.map((s) => (
               <div key={s.label} className="py-6 md:py-8 border-l border-white/10 first:border-l-0 pl-6">
                 <div className="text-3xl md:text-4xl font-display font-bold text-gold">{s.value}</div>
-                <div className="mt-1 text-xs tracking-[0.2em] text-white/60 uppercase">{s.label}</div>
+                <div className="mt-2 inline-block px-2 py-1 bg-white/80 text-xs tracking-[0.2em] text-prestige uppercase font-semibold">{s.label}</div>
               </div>
             ))}
           </div>

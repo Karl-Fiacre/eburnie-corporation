@@ -42,43 +42,38 @@
 :root {
   --radius: 0.375rem;
 
-  /* Brand — Premium palette: midnight plum + champagne gold */
-  --gold: oklch(0.82 0.13 86);            /* champagne gold */
-  --gold-bright: oklch(0.92 0.14 95);     /* bright champagne */
-  --gold-deep: oklch(0.68 0.14 70);       /* antique brass */
-  --prestige: oklch(0.18 0.05 320);       /* deep midnight plum */
-  --prestige-2: oklch(0.12 0.04 315);     /* darker plum */
-  --ivory: oklch(0.97 0.012 90);          /* warm ivory */
+  /* Brand */
+  --gold: oklch(0.86 0.17 95);            /* yellow-gold from logo */
+  --gold-bright: oklch(0.92 0.19 100);    /* brighter yellow */
+  --prestige: oklch(0.25 0.09 325);       /* deep purple/plum from logo */
   --corporate-gray: oklch(0.55 0.03 320); /* muted purple-gray */
 
-  --background: var(--ivory);
-  --foreground: oklch(0.16 0.02 320);
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.16 0 0);
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.16 0.02 320);
+  --card-foreground: oklch(0.16 0 0);
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.16 0.02 320);
+  --popover-foreground: oklch(0.16 0 0);
 
   --primary: var(--prestige);
-  --primary-foreground: var(--ivory);
-  --secondary: oklch(0.96 0.008 90);
+  --primary-foreground: oklch(1 0 0);
+  --secondary: oklch(0.97 0.005 260);
   --secondary-foreground: var(--prestige);
-  --muted: oklch(0.95 0.008 90);
+  --muted: oklch(0.97 0.005 260);
   --muted-foreground: var(--corporate-gray);
   --accent: var(--gold);
   --accent-foreground: var(--prestige);
   --destructive: oklch(0.55 0.22 27);
   --destructive-foreground: oklch(1 0 0);
-  --border: oklch(0.90 0.01 90);
-  --input: oklch(0.92 0.008 90);
+  --border: oklch(0.92 0.005 260);
+  --input: oklch(0.92 0.005 260);
   --ring: var(--gold);
 
-  --gradient-gold: linear-gradient(135deg, var(--gold-deep) 0%, var(--gold) 45%, var(--gold-bright) 100%);
-  --gradient-prestige: linear-gradient(160deg, oklch(0.22 0.06 325) 0%, var(--prestige) 50%, var(--prestige-2) 100%);
-  --gradient-aurora: radial-gradient(ellipse at 20% 0%, oklch(0.82 0.13 86 / 0.35), transparent 55%), radial-gradient(ellipse at 80% 100%, oklch(0.45 0.18 320 / 0.45), transparent 55%);
-  --shadow-premium: 0 30px 80px -30px oklch(0.18 0.10 325 / 0.55);
-  --shadow-gold: 0 20px 50px -15px oklch(0.74 0.13 85 / 0.5);
+  --gradient-gold: linear-gradient(135deg, var(--gold) 0%, var(--gold-bright) 100%);
+  --gradient-prestige: linear-gradient(180deg, oklch(0.28 0.10 325) 0%, oklch(0.18 0.08 325) 100%);
+  --shadow-premium: 0 20px 60px -20px oklch(0.20 0.10 325 / 0.45);
+  --shadow-gold: 0 10px 40px -10px oklch(0.74 0.13 85 / 0.45);
 }
-
 
 .dark {
   --background: var(--prestige);
@@ -121,48 +116,12 @@
 @utility bg-prestige { background-color: var(--prestige); }
 @utility bg-gradient-gold { background-image: var(--gradient-gold); }
 @utility bg-gradient-prestige { background-image: var(--gradient-prestige); }
-@utility bg-gradient-aurora { background-image: var(--gradient-aurora); }
 @utility shadow-premium { box-shadow: var(--shadow-premium); }
 @utility shadow-gold { box-shadow: var(--shadow-gold); }
 @utility border-gold { border-color: var(--gold); }
-@utility text-gradient-gold {
-  background: var(--gradient-gold);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
 
 @keyframes fade-up {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
 }
 @utility animate-fade-up { animation: fade-up 0.8s ease-out both; }
-
-@keyframes shimmer {
-  0% { background-position: -200% 0; }
-  100% { background-position: 200% 0; }
-}
-@utility animate-shimmer {
-  background: linear-gradient(90deg, transparent, oklch(0.92 0.14 95 / 0.5), transparent);
-  background-size: 200% 100%;
-  animation: shimmer 3s linear infinite;
-}
-
-@keyframes float-slow {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  50% { transform: translate(30px, -20px) scale(1.05); }
-}
-@utility animate-float-slow { animation: float-slow 12s ease-in-out infinite; }
-
-@keyframes marquee {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
-}
-@utility animate-marquee { animation: marquee 40s linear infinite; }
-
-@keyframes pulse-ring {
-  0% { box-shadow: 0 0 0 0 oklch(0.82 0.13 86 / 0.6); }
-  100% { box-shadow: 0 0 0 24px oklch(0.82 0.13 86 / 0); }
-}
-@utility animate-pulse-ring { animation: pulse-ring 2.4s cubic-bezier(0.25, 0.8, 0.25, 1) infinite; }
-

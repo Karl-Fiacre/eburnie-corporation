@@ -130,36 +130,19 @@ function HomePage() {
               investisseurs internationaux et accompagner la transformation
               durable des marchés.
             </p>
-            <div className="grid sm:grid-cols-3 gap-8 pt-6">
+            <div className="grid sm:grid-cols-3 gap-6 pt-6">
               {[
                 { icon: TrendingUp, t: "Croissance", d: "Stratégie panafricaine" },
                 { icon: ShieldCheck, t: "Gouvernance", d: "Standards internationaux" },
                 { icon: Compass, t: "Vision", d: "Long-terme & durable" },
-              ].map((v, i) => (
-                <div
-                  key={v.t}
-                  style={{ animationDelay: `${i * 160}ms` }}
-                  className="group relative pt-5 cursor-default opacity-0 animate-fade-in"
-                >
-                  {/* Top gold line that draws in */}
-                  <div className="absolute top-0 left-0 h-[2px] w-full bg-gold/20 overflow-hidden">
-                    <div
-                      className="h-full w-full bg-gold origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-700 ease-out"
-                      style={{ animation: `goldDraw 1s ease-out ${i * 160 + 200}ms both` }}
-                    />
-                  </div>
-                  <v.icon
-                    className="text-gold mt-5 transition-all duration-500 group-hover:-translate-y-1 group-hover:scale-110 group-hover:rotate-6"
-                    size={24}
-                  />
-                  <div className="mt-5 font-display font-bold text-lg text-foreground transition-colors duration-300 group-hover:text-gold">
-                    {v.t}
-                  </div>
-                  <div className="mt-1 text-sm text-muted-foreground">{v.d}</div>
+              ].map((v) => (
+                <div key={v.t} className="border-t-2 border-gold pt-4">
+                  <v.icon className="text-gold" size={22} />
+                  <div className="mt-3 font-display font-semibold text-foreground">{v.t}</div>
+                  <div className="text-sm text-muted-foreground">{v.d}</div>
                 </div>
               ))}
             </div>
-            <style>{`@keyframes goldDraw { from { transform: scaleX(0);} to { transform: scaleX(1);} }`}</style>
           </div>
         </div>
       </section>

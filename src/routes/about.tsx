@@ -54,49 +54,18 @@ function AboutPage() {
         </div>
       </section>
 
-      <section className="relative py-28 bg-prestige overflow-hidden">
-        <div className="absolute inset-0 opacity-[0.06] pointer-events-none"
-          style={{
-            backgroundImage:
-              "linear-gradient(var(--gold) 1px, transparent 1px), linear-gradient(90deg, var(--gold) 1px, transparent 1px)",
-            backgroundSize: "80px 80px",
-          }}
-        />
-        <div className="absolute -top-32 -left-32 h-[28rem] w-[28rem] rounded-full bg-gold/20 blur-3xl" />
-        <div className="absolute -bottom-32 -right-32 h-[28rem] w-[28rem] rounded-full bg-primary/30 blur-3xl" />
-
-        <div className="relative mx-auto max-w-7xl px-6 lg:px-10">
+      <section className="py-24 bg-secondary">
+        <div className="mx-auto max-w-7xl px-6 lg:px-10">
           <div className="max-w-2xl">
             <div className="text-xs tracking-[0.32em] text-gold">CE QUI NOUS GUIDE</div>
-            <h2 className="mt-4 text-3xl md:text-5xl font-bold text-white leading-tight">
-              Mission, vision <span className="text-gold">et valeurs.</span>
-            </h2>
-            <p className="mt-5 text-white/70 max-w-xl leading-relaxed">
-              Les fondations qui orientent chacune de nos décisions et alimentent notre ambition panafricaine.
-            </p>
+            <h2 className="mt-4 text-3xl md:text-4xl font-bold">Mission, vision et valeurs.</h2>
           </div>
-
-          <div className="mt-16 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {values.map((v, i) => (
-              <div
-                key={v.title}
-                className="group relative rounded-2xl border border-white/10 bg-white/[0.04] backdrop-blur-sm p-8 overflow-hidden transition-all duration-500 hover:border-gold/40 hover:bg-white/[0.07] hover:-translate-y-2 hover:shadow-[0_30px_80px_-20px_rgba(0,0,0,0.6)]"
-              >
-                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
-                  style={{ background: "radial-gradient(circle at top right, var(--gold) 0%, transparent 60%)", mixBlendMode: "overlay" }}
-                />
-                <div className="absolute top-6 right-6 font-display text-5xl font-bold text-white/5 group-hover:text-gold/20 transition-colors duration-500">
-                  0{i + 1}
-                </div>
-
-                <div className="relative">
-                  <div className="inline-flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-to-br from-gold/30 to-gold/5 border border-gold/20 group-hover:from-gold group-hover:to-gold-bright group-hover:border-gold transition-all duration-500">
-                    <v.icon className="text-gold group-hover:text-prestige transition-colors duration-500" size={26} />
-                  </div>
-                  <div className="mt-6 font-display font-bold text-xl text-white">{v.title}</div>
-                  <div className="mt-3 h-px w-10 bg-gold/40 group-hover:w-20 transition-all duration-500" />
-                  <p className="mt-4 text-sm text-white/65 leading-relaxed">{v.text}</p>
-                </div>
+          <div className="mt-14 grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-border">
+            {values.map((v) => (
+              <div key={v.title} className="bg-background p-8">
+                <v.icon className="text-gold" size={26} />
+                <div className="mt-5 font-display font-bold text-lg">{v.title}</div>
+                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{v.text}</p>
               </div>
             ))}
           </div>

@@ -132,14 +132,34 @@ function HomePage() {
             </p>
             <div className="grid sm:grid-cols-3 gap-6 pt-6">
               {[
-                { icon: TrendingUp, t: "Croissance", d: "Stratégie panafricaine" },
-                { icon: ShieldCheck, t: "Gouvernance", d: "Standards internationaux" },
-                { icon: Compass, t: "Vision", d: "Long-terme & durable" },
-              ].map((v) => (
-                <div key={v.t} className="border-t-2 border-gold pt-4">
-                  <v.icon className="text-gold" size={22} />
-                  <div className="mt-3 font-display font-semibold text-foreground">{v.t}</div>
-                  <div className="text-sm text-muted-foreground">{v.d}</div>
+                { icon: TrendingUp, t: "Croissance", d: "Stratégie panafricaine", n: "01" },
+                { icon: ShieldCheck, t: "Gouvernance", d: "Standards internationaux", n: "02" },
+                { icon: Compass, t: "Vision", d: "Long-terme & durable", n: "03" },
+              ].map((v, i) => (
+                <div
+                  key={v.t}
+                  style={{ animationDelay: `${i * 140}ms` }}
+                  className="group relative overflow-hidden rounded-xl bg-prestige text-white p-6 cursor-default opacity-0 animate-fade-in transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_50px_-12px_rgba(0,0,0,0.35)]"
+                >
+                  {/* Top gold sweep line */}
+                  <div className="absolute top-0 left-0 h-[2px] w-1/3 bg-gold transition-all duration-700 ease-out group-hover:w-full" />
+                  {/* Diagonal sheen on hover */}
+                  <div className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-gold/20 to-transparent transition-transform duration-1000 ease-out group-hover:translate-x-full" />
+                  {/* Gold glow */}
+                  <div className="pointer-events-none absolute -bottom-16 -right-16 w-40 h-40 rounded-full bg-gold/30 blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+
+                  <div className="relative flex items-start justify-between">
+                    <div className="relative">
+                      <div className="absolute -inset-2 rounded-full bg-gold/0 blur-xl transition-all duration-500 group-hover:bg-gold/30" />
+                      <v.icon className="relative text-gold transition-transform duration-500 group-hover:scale-110 group-hover:rotate-6" size={26} />
+                    </div>
+                    <span className="font-display text-xs tracking-[0.2em] text-white/30 group-hover:text-gold transition-colors">
+                      {v.n}
+                    </span>
+                  </div>
+                  <div className="relative mt-6 font-display font-bold text-lg text-white">{v.t}</div>
+                  <div className="relative mt-1 text-sm text-white/60">{v.d}</div>
+                  <div className="relative mt-5 h-px w-0 bg-gold transition-all duration-700 ease-out group-hover:w-full" />
                 </div>
               ))}
             </div>

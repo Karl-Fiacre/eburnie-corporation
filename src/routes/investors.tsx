@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import heroImg from "@/assets/hero-investors.jpg";
 import { PageHero } from "@/components/PageHero";
 import { TrendingUp, BarChart3, Globe, ShieldCheck } from "lucide-react";
 import { ContactForm } from "@/components/ContactForm";
@@ -26,7 +27,7 @@ const pillars = [
 function InvestorsPage() {
   return (
     <>
-      <PageHero
+      <PageHero image={heroImg}
         eyebrow="INVESTISSEURS"
         title="Co-construire la prochaine génération de champions africains."
         subtitle="Eburnie Corporation ouvre son capital et ses opportunités à des partenaires partageant notre vision long-terme."

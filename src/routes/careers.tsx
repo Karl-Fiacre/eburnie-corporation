@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import heroImg from "@/assets/hero-careers.jpg";
 import { PageHero } from "@/components/PageHero";
 import { Briefcase, GraduationCap, FileText, MapPin } from "lucide-react";
 
@@ -26,7 +27,7 @@ const jobs = [
 function CareersPage() {
   return (
     <>
-      <PageHero
+      <PageHero image={heroImg}
         eyebrow="CARRIÈRES"
         title="Rejoignez ceux qui construisent l'Afrique de demain."
         subtitle="Nous recrutons des talents engagés, ambitieux et passionnés par l'impact."

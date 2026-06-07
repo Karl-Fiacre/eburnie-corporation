@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import heroImg from "@/assets/hero-contact.jpg";
 import { PageHero } from "@/components/PageHero";
 import { MapPin, Phone, Mail, MessageCircle } from "lucide-react";
 import { ContactForm } from "@/components/ContactForm";
@@ -26,7 +27,7 @@ const infos = [
 function ContactPage() {
   return (
     <>
-      <PageHero eyebrow="CONTACT" title="Discutons de votre projet." subtitle="Notre équipe vous répond sous 48h ouvrées." />
+      <PageHero image={heroImg} eyebrow="CONTACT" title="Discutons de votre projet." subtitle="Notre équipe vous répond sous 48h ouvrées." />
       <section className="py-24">
         <div className="mx-auto max-w-7xl px-6 lg:px-10 grid lg:grid-cols-12 gap-16">
           <div className="lg:col-span-5">

@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import heroImg from "@/assets/hero-news.jpg";
 import { PageHero } from "@/components/PageHero";
 import { useState } from "react";
 import { Search } from "lucide-react";
@@ -37,7 +38,7 @@ function NewsPage() {
   );
   return (
     <>
-      <PageHero eyebrow="ACTUALITÉS" title="L'actualité du groupe et de ses filiales." />
+      <PageHero image={heroImg} eyebrow="ACTUALITÉS" title="L'actualité du groupe et de ses filiales." />
       <section className="py-20">
         <div className="mx-auto max-w-7xl px-6 lg:px-10">
           <div className="flex flex-col lg:flex-row gap-4 items-stretch lg:items-center justify-between mb-10">

@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import heroImg from "@/assets/hero-subsidiaries.jpg";
 import { PageHero } from "@/components/PageHero";
 import { ShoppingBag, Car, Building2, Globe2, Truck, CalendarRange, ArrowUpRight } from "lucide-react";
 
@@ -27,7 +28,7 @@ const subs = [
 function SubsidiariesPage() {
   return (
     <>
-      <PageHero
+      <PageHero image={heroImg}
         eyebrow="NOS FILIALES"
         title="Six pôles, une vision unifiée."
         subtitle="Chaque filiale opère avec ses propres expertises et équipes, sous la gouvernance stratégique du groupe."

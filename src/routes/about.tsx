@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import heroImg from "@/assets/hero-about.jpg";
 import { PageHero } from "@/components/PageHero";
 import { Target, Eye, Heart, Users, Building, Globe } from "lucide-react";
 
@@ -27,7 +28,7 @@ const values = [
 function AboutPage() {
   return (
     <>
-      <PageHero
+      <PageHero image={heroImg}
         eyebrow="À PROPOS"
         title="Un groupe africain, une ambition continentale."
         subtitle="Eburnie Corporation est née d'une conviction : l'Afrique mérite des champions économiques structurés, ambitieux et pérennes."

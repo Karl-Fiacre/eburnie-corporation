@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import heroImg from "@/assets/hero-partners.jpg";
 import { PageHero } from "@/components/PageHero";
 import { Handshake, Landmark, Truck } from "lucide-react";
 import { ContactForm } from "@/components/ContactForm";
@@ -25,7 +26,7 @@ const categories = [
 function PartnersPage() {
   return (
     <>
-      <PageHero
+      <PageHero image={heroImg}
         eyebrow="PARTENAIRES"
         title="Construisons ensemble un écosystème panafricain."
         subtitle="Eburnie Corporation s'appuie sur un réseau de partenaires triés pour leur excellence et leur engagement long-terme."

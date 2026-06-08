@@ -14,8 +14,8 @@ export function PageHero({ eyebrow, title, subtitle, image, children }: PageHero
       className="relative pt-40 pb-24 overflow-hidden bg-cover bg-center"
       style={{ backgroundImage: `url(${image})` }}
     >
-      {/* 80% white overlay */}
-      <div className="absolute inset-0 bg-white/80 backdrop-blur-[2px]" />
+      {/* subtle dark gradient for readability */}
+      <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/60" />
       {/* subtle grid accent */}
       <div
         className="absolute inset-0 opacity-[0.06] pointer-events-none"

@@ -26,15 +26,15 @@ export function PageHero({ eyebrow, title, subtitle, image, children }: PageHero
         }}
       />
       <div className="absolute -top-20 -right-32 h-96 w-96 rounded-full bg-gold/30 blur-3xl" />
-      <div className="relative mx-auto max-w-7xl px-6 lg:px-10 text-prestige">
+      <div className="relative mx-auto max-w-7xl px-6 lg:px-10 text-white">
         <div className="text-xs tracking-[0.32em] font-semibold text-gold-bright animate-fade-up">
           {eyebrow}
         </div>
-        <h1 className="mt-5 text-4xl md:text-6xl font-bold max-w-4xl leading-[1.05] animate-fade-up text-prestige">
+        <h1 className="mt-5 text-4xl md:text-6xl font-bold max-w-4xl leading-[1.05] animate-fade-up text-white">
           {title}
         </h1>
         {subtitle && (
-          <p className="mt-6 text-lg text-prestige/80 max-w-2xl animate-fade-up">{subtitle}</p>
+          <p className="mt-6 text-lg text-white/80 max-w-2xl animate-fade-up">{subtitle}</p>
         )}
         {children && <div className="mt-10 animate-fade-up">{children}</div>}
       </div>

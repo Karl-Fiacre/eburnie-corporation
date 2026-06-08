@@ -102,7 +102,7 @@ function HomePage() {
             {stats.map((s) => (
               <div key={s.label} className="py-6 md:py-8 border-l border-white/10 first:border-l-0 pl-6">
                 <div className="text-3xl md:text-4xl font-display font-bold text-gold">{s.value}</div>
-                <div className="mt-2 inline-block px-2 py-1 bg-white/80 text-xs tracking-[0.2em] text-prestige uppercase font-semibold">{s.label}</div>
+                <div className="mt-2 inline-block px-2 py-1 text-xs tracking-[0.2em] text-white/90 uppercase font-semibold">{s.label}</div>
               </div>
             ))}
           </div>

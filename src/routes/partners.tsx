@@ -4,22 +4,37 @@ import { PageHero } from "@/components/PageHero";
 import { Handshake, Landmark, Truck } from "lucide-react";
 import { ContactForm } from "@/components/ContactForm";
 
+import { SITE_URL } from "@/lib/site";
+
 export const Route = createFileRoute("/partners")({
   head: () => ({
     meta: [
-      { title: "Partenaires — Eburnie Corporation" },
-      { name: "description", content: "Devenez partenaire stratégique d'Eburnie Corporation." },
+      { title: "Partenaires — Eburnie Corporation (Côte d'Ivoire)" },
+      {
+        name: "description",
+        content:
+          "Devenez partenaire stratégique d'Eburnie Corporation, holding multisectorielle basée à Abidjan, Côte d'Ivoire.",
+      },
       { property: "og:title", content: "Partenaires — Eburnie Corporation" },
-      { property: "og:url", content: "/partners" },
+      {
+        property: "og:description",
+        content: "Construisons ensemble un écosystème performant en Côte d'Ivoire.",
+      },
+      { property: "og:url", content: `${SITE_URL}/partners` },
+      { name: "twitter:title", content: "Partenaires — Eburnie Corporation" },
+      {
+        name: "twitter:description",
+        content: "Construisons ensemble un écosystème performant en Côte d'Ivoire.",
+      },
     ],
-    links: [{ rel: "canonical", href: "/partners" }],
+    links: [{ rel: "canonical", href: `${SITE_URL}/partners` }],
   }),
   component: PartnersPage,
 });
 
 const categories = [
   { icon: Handshake, t: "Partenaires stratégiques", d: "Alliances industrielles, commerciales et opérationnelles structurantes." },
-  { icon: Landmark, t: "Institutions", d: "Coopération avec institutions publiques, ONG et organisations multilatérales." },
+  { icon: Landmark, t: "Institutions", d: "Coopération avec institutions publiques ivoiriennes, ONG et organisations multilatérales." },
   { icon: Truck, t: "Fournisseurs", d: "Réseau de fournisseurs qualifiés sur l'ensemble de nos chaînes de valeur." },
 ];
 
@@ -28,7 +43,7 @@ function PartnersPage() {
     <>
       <PageHero image={heroImg}
         eyebrow="PARTENAIRES"
-        title="Construisons ensemble un écosystème panafricain."
+        title="Construisons ensemble un écosystème ivoirien performant."
         subtitle="Eburnie Corporation s'appuie sur un réseau de partenaires triés pour leur excellence et leur engagement long-terme."
       />
       <section className="py-24">

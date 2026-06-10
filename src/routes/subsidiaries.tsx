@@ -3,25 +3,40 @@ import heroImg from "@/assets/hero-subsidiaries.jpg";
 import { PageHero } from "@/components/PageHero";
 import { ShoppingBag, Car, Building2, Globe2, Truck, CalendarRange, ArrowUpRight } from "lucide-react";
 
+import { SITE_URL } from "@/lib/site";
+
 export const Route = createFileRoute("/subsidiaries")({
   head: () => ({
     meta: [
-      { title: "Nos Filiales — Eburnie Corporation" },
-      { name: "description", content: "Découvrez les six filiales du groupe Eburnie Corporation." },
+      { title: "Nos Filiales — Eburnie Corporation (Côte d'Ivoire)" },
+      {
+        name: "description",
+        content:
+          "Découvrez les six filiales du groupe Eburnie Corporation : Boutique, Auto, Immobilier, China Deals, Cargo, Event — basées à Abidjan, Côte d'Ivoire.",
+      },
       { property: "og:title", content: "Nos Filiales — Eburnie Corporation" },
-      { property: "og:url", content: "/subsidiaries" },
+      {
+        property: "og:description",
+        content: "Six filiales ivoiriennes sous une gouvernance unifiée : e-commerce, mobilité, immobilier, import-export, logistique, événementiel.",
+      },
+      { property: "og:url", content: `${SITE_URL}/subsidiaries` },
+      { name: "twitter:title", content: "Nos Filiales — Eburnie Corporation" },
+      {
+        name: "twitter:description",
+        content: "Six filiales ivoiriennes : e-commerce, mobilité, immobilier, import-export, logistique, événementiel.",
+      },
     ],
-    links: [{ rel: "canonical", href: "/subsidiaries" }],
+    links: [{ rel: "canonical", href: `${SITE_URL}/subsidiaries` }],
   }),
   component: SubsidiariesPage,
 });
 
 const subs = [
-  { icon: ShoppingBag, name: "Eburnie Boutique", tag: "E-COMMERCE", desc: "Plateforme e-commerce panafricaine connectant marques et consommateurs avec une expérience d'achat moderne et sécurisée.", url: "https://boutique.eburniecorporation.com" },
-  { icon: Car, name: "Eburnie Auto", tag: "AUTOMOBILE & MOBILITÉ", desc: "Distribution automobile, mobilité urbaine et solutions de transport adaptées aux marchés africains.", url: "https://auto.eburniecorporation.com" },
-  { icon: Building2, name: "Eburnie Immobilier", tag: "IMMOBILIER", desc: "Développement, gestion et commercialisation de projets immobiliers résidentiels et commerciaux haut de gamme.", url: "https://immobilier.eburniecorporation.com" },
-  { icon: Globe2, name: "Eburnie China Deals", tag: "IMPORT-EXPORT & SOURCING", desc: "Sourcing stratégique en Chine et accompagnement complet des opérations d'import-export pour les entreprises africaines.", url: "https://chinadeals.eburniecorporation.com" },
-  { icon: Truck, name: "Eburnie Cargo", tag: "LOGISTIQUE & TRANSPORT", desc: "Solutions logistiques intégrées : fret maritime, aérien, routier et dernière mile sur l'ensemble du continent.", url: "https://cargo.eburniecorporation.com" },
+  { icon: ShoppingBag, name: "Eburnie Boutique", tag: "E-COMMERCE", desc: "Plateforme e-commerce ivoirienne connectant marques et consommateurs avec une expérience d'achat moderne et sécurisée.", url: "https://boutique.eburniecorporation.com" },
+  { icon: Car, name: "Eburnie Auto", tag: "AUTOMOBILE & MOBILITÉ", desc: "Distribution automobile, mobilité urbaine et solutions de transport adaptées au marché ivoirien.", url: "https://auto.eburniecorporation.com" },
+  { icon: Building2, name: "Eburnie Immobilier", tag: "IMMOBILIER", desc: "Développement, gestion et commercialisation de projets immobiliers résidentiels et commerciaux haut de gamme à Abidjan.", url: "https://immobilier.eburniecorporation.com" },
+  { icon: Globe2, name: "Eburnie China Deals", tag: "IMPORT-EXPORT & SOURCING", desc: "Sourcing stratégique en Chine et accompagnement complet des opérations d'import-export pour les entreprises ivoiriennes.", url: "https://chinadeals.eburniecorporation.com" },
+  { icon: Truck, name: "Eburnie Cargo", tag: "LOGISTIQUE & TRANSPORT", desc: "Solutions logistiques intégrées : fret maritime, aérien, routier et dernière mile au départ et à destination de la Côte d'Ivoire.", url: "https://cargo.eburniecorporation.com" },
   { icon: CalendarRange, name: "Eburnie Event", tag: "VOYAGES & ÉVÉNEMENTIEL", desc: "Organisation de voyages d'affaires, rencontres professionnelles et événements corporate de grande envergure.", url: "https://event.eburniecorporation.com" },
 ];
 

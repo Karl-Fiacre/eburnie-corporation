@@ -3,15 +3,30 @@ import heroImg from "@/assets/hero-careers.jpg";
 import { PageHero } from "@/components/PageHero";
 import { Briefcase, GraduationCap, FileText, MapPin } from "lucide-react";
 
+import { SITE_URL } from "@/lib/site";
+
 export const Route = createFileRoute("/careers")({
   head: () => ({
     meta: [
-      { title: "Carrières — Eburnie Corporation" },
-      { name: "description", content: "Rejoignez les équipes du groupe Eburnie Corporation." },
+      { title: "Carrières — Eburnie Corporation (Abidjan, Côte d'Ivoire)" },
+      {
+        name: "description",
+        content:
+          "Rejoignez les équipes du groupe Eburnie Corporation à Abidjan, Côte d'Ivoire. Offres d'emploi, stages et candidatures spontanées.",
+      },
       { property: "og:title", content: "Carrières — Eburnie Corporation" },
-      { property: "og:url", content: "/careers" },
+      {
+        property: "og:description",
+        content: "Rejoignez ceux qui construisent la Côte d'Ivoire de demain.",
+      },
+      { property: "og:url", content: `${SITE_URL}/careers` },
+      { name: "twitter:title", content: "Carrières — Eburnie Corporation" },
+      {
+        name: "twitter:description",
+        content: "Rejoignez ceux qui construisent la Côte d'Ivoire de demain.",
+      },
     ],
-    links: [{ rel: "canonical", href: "/careers" }],
+    links: [{ rel: "canonical", href: `${SITE_URL}/careers` }],
   }),
   component: CareersPage,
 });
@@ -29,7 +44,7 @@ function CareersPage() {
     <>
       <PageHero image={heroImg}
         eyebrow="CARRIÈRES"
-        title="Rejoignez ceux qui construisent l'Afrique de demain."
+        title="Rejoignez ceux qui construisent la Côte d'Ivoire de demain."
         subtitle="Nous recrutons des talents engagés, ambitieux et passionnés par l'impact."
       />
       <section className="py-24">

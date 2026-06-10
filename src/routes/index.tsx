@@ -13,23 +13,31 @@ import {
   Compass,
 } from "lucide-react";
 
+import { SITE_URL } from "@/lib/site";
+
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Eburnie Corporation — Construire les opportunités de demain" },
+      { title: "Eburnie Corporation — Groupe multisectoriel ivoirien (Abidjan)" },
       {
         name: "description",
         content:
-          "Groupe multisectoriel africain opérant dans le commerce, la mobilité, l'immobilier, la logistique, les échanges internationaux et l'événementiel.",
+          "Groupe multisectoriel basé à Abidjan, Côte d'Ivoire : commerce, mobilité, immobilier, logistique, import-export et événementiel.",
       },
-      { property: "og:title", content: "Eburnie Corporation" },
+      { property: "og:title", content: "Eburnie Corporation — Côte d'Ivoire" },
       {
         property: "og:description",
-        content: "Construire les opportunités de demain en Afrique.",
+        content:
+          "Construire les opportunités de demain en Côte d'Ivoire. Six filiales structurées sous une holding ivoirienne.",
       },
-      { property: "og:url", content: "/" },
+      { property: "og:url", content: `${SITE_URL}/` },
+      { name: "twitter:title", content: "Eburnie Corporation — Côte d'Ivoire" },
+      {
+        name: "twitter:description",
+        content: "Holding multisectorielle ivoirienne : commerce, mobilité, immobilier, logistique, import-export, événementiel.",
+      },
     ],
-    links: [{ rel: "canonical", href: "/" }],
+    links: [{ rel: "canonical", href: `${SITE_URL}/` }],
   }),
   component: HomePage,
 });
@@ -42,7 +50,7 @@ const stats = [
 ];
 
 const subs = [
-  { icon: ShoppingBag, name: "Eburnie Boutique", desc: "E-commerce panafricain", url: "https://boutique.eburniecorporation.com" },
+  { icon: ShoppingBag, name: "Eburnie Boutique", desc: "E-commerce ivoirien", url: "https://boutique.eburniecorporation.com" },
   { icon: Car, name: "Eburnie Auto", desc: "Automobile & Mobilité", url: "https://auto.eburniecorporation.com" },
   { icon: Building2, name: "Eburnie Immobilier", desc: "Développement immobilier", url: "https://immobilier.eburniecorporation.com" },
   { icon: Globe2, name: "Eburnie China Deals", desc: "Import-Export & Sourcing", url: "https://chinadeals.eburniecorporation.com" },
@@ -57,7 +65,7 @@ function HomePage() {
       <section className="relative min-h-screen flex items-center bg-prestige text-white overflow-hidden">
         <img
           src={heroImg}
-          alt="Skyline corporate africain au coucher du soleil"
+          alt="Skyline corporate d'Abidjan au coucher du soleil"
           width={1920}
           height={1080}
           className="absolute inset-0 h-full w-full object-cover opacity-50"
@@ -69,16 +77,16 @@ function HomePage() {
           <div className="max-w-3xl">
             <div className="flex items-center gap-3 text-xs tracking-[0.32em] text-gold-bright animate-fade-up">
               <span className="h-px w-10 bg-gold" />
-              GROUPE MULTISECTORIEL AFRICAIN
+              GROUPE MULTISECTORIEL IVOIRIEN
             </div>
             <h1 className="mt-8 text-5xl md:text-7xl font-bold leading-[1.02] animate-fade-up">
               Construire les opportunités{" "}
-              <span className="text-gold-bright">de demain</span> en Afrique.
+              <span className="text-gold-bright">de demain</span> en Côte d'Ivoire.
             </h1>
             <p className="mt-8 text-lg md:text-xl text-white/75 max-w-2xl leading-relaxed animate-fade-up">
-              Eburnie Corporation est un groupe multisectoriel opérant dans le
-              commerce, la mobilité, l'immobilier, la logistique, les échanges
-              internationaux et l'événementiel.
+              Eburnie Corporation est un groupe multisectoriel basé à Abidjan,
+              opérant dans le commerce, la mobilité, l'immobilier, la logistique,
+              les échanges internationaux et l'événementiel.
             </p>
             <div className="mt-10 flex flex-wrap gap-4 animate-fade-up">
               <Link
@@ -115,24 +123,24 @@ function HomePage() {
           <div className="lg:col-span-5">
             <div className="text-xs tracking-[0.32em] text-gold">LE GROUPE</div>
             <h2 className="mt-5 text-4xl md:text-5xl font-bold leading-tight">
-              Un acteur structuré au service du développement africain.
+              Un acteur structuré au service du développement de la Côte d'Ivoire.
             </h2>
           </div>
           <div className="lg:col-span-7 space-y-6 text-base text-muted-foreground leading-relaxed">
             <p>
               Eburnie Corporation rassemble six filiales stratégiques sous une
               gouvernance unifiée, conçue pour répondre aux besoins économiques,
-              logistiques et institutionnels du continent africain.
+              logistiques et institutionnels du marché ivoirien.
             </p>
             <p>
-              Notre ambition : bâtir une holding panafricaine de référence,
-              capable de catalyser les flux commerciaux, mobiliser les
-              investisseurs internationaux et accompagner la transformation
-              durable des marchés.
+              Notre ambition : bâtir une holding de référence en Côte d'Ivoire,
+              capable de catalyser les flux commerciaux et d'accompagner la
+              transformation durable du marché. Une expansion ultérieure en
+              Afrique de l'Ouest est envisagée.
             </p>
             <div className="grid sm:grid-cols-3 gap-6 pt-6">
               {[
-                { icon: TrendingUp, t: "Croissance", d: "Stratégie panafricaine" },
+                { icon: TrendingUp, t: "Croissance", d: "Ancrage ivoirien" },
                 { icon: ShieldCheck, t: "Gouvernance", d: "Standards internationaux" },
                 { icon: Compass, t: "Vision", d: "Long-terme & durable" },
               ].map((v) => (
@@ -188,7 +196,7 @@ function HomePage() {
           <div className="text-xs tracking-[0.32em] text-gold">DIRECTION GÉNÉRALE</div>
           <blockquote className="mt-8 text-2xl md:text-4xl font-display font-medium leading-snug">
             « Notre vision est claire : faire d'Eburnie Corporation un pilier
-            économique africain, ancré dans l'excellence, l'innovation et la
+            économique ivoirien, ancré dans l'excellence, l'innovation et la
             création de valeur partagée. »
           </blockquote>
           <div className="mt-10">
@@ -208,7 +216,7 @@ function HomePage() {
               </h2>
               <p className="mt-5 text-prestige/80 text-lg">
                 Rejoignez notre écosystème de partenaires stratégiques et
-                participez à la construction d'une Afrique moderne et connectée.
+                participez à la construction d'une Côte d'Ivoire moderne et connectée.
               </p>
               <div className="mt-8 flex flex-wrap gap-4">
                 <Link to="/investors" className="px-7 py-4 bg-prestige text-white text-sm font-semibold tracking-wide hover:bg-black rounded-sm">

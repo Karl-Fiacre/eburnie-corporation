@@ -51,7 +51,7 @@ export function SiteFooter() {
         </div>
 
         <div className="lg:col-span-2">
-          <h4 className="text-xs tracking-[0.25em] text-gold mb-5">GROUPE</h4>
+          <h4 className="text-xs tracking-[0.25em] text-gold-bright mb-5">GROUPE</h4>
           <ul className="space-y-3 text-sm">
             {quickLinks.map((l) => (
               <li key={l.to}>
@@ -64,7 +64,7 @@ export function SiteFooter() {
         </div>
 
         <div className="lg:col-span-3">
-          <h4 className="text-xs tracking-[0.25em] text-gold mb-5">FILIALES</h4>
+          <h4 className="text-xs tracking-[0.25em] text-gold-bright mb-5">FILIALES</h4>
           <ul className="space-y-3 text-sm">
             {subsidiaries.map((s) => (
               <li key={s.url}>
@@ -82,7 +82,7 @@ export function SiteFooter() {
         </div>
 
         <div className="lg:col-span-3">
-          <h4 className="text-xs tracking-[0.25em] text-gold mb-5">NEWSLETTER</h4>
+          <h4 className="text-xs tracking-[0.25em] text-gold-bright mb-5">NEWSLETTER</h4>
           <p className="text-sm text-white/65 mb-4">
             Recevez nos actualités corporate et opportunités d'investissement.
           </p>

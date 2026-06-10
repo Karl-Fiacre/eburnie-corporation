@@ -67,13 +67,13 @@ function HomePage() {
 
         <div className="relative mx-auto max-w-7xl px-6 lg:px-10 pt-32 pb-56 w-full">
           <div className="max-w-3xl">
-            <div className="flex items-center gap-3 text-xs tracking-[0.32em] text-gold animate-fade-up">
+            <div className="flex items-center gap-3 text-xs tracking-[0.32em] text-gold-bright animate-fade-up">
               <span className="h-px w-10 bg-gold" />
               GROUPE MULTISECTORIEL AFRICAIN
             </div>
             <h1 className="mt-8 text-5xl md:text-7xl font-bold leading-[1.02] animate-fade-up">
               Construire les opportunités{" "}
-              <span className="text-gold">de demain</span> en Afrique.
+              <span className="text-gold-bright">de demain</span> en Afrique.
             </h1>
             <p className="mt-8 text-lg md:text-xl text-white/75 max-w-2xl leading-relaxed animate-fade-up">
               Eburnie Corporation est un groupe multisectoriel opérant dans le
@@ -89,7 +89,7 @@ function HomePage() {
               </Link>
               <Link
                 to="/partners"
-                className="inline-flex items-center gap-2 px-7 py-4 border border-white/30 hover:border-gold hover:text-gold text-sm font-semibold tracking-wide transition-colors rounded-sm"
+                className="inline-flex items-center gap-2 px-7 py-4 border border-white/30 hover:border-gold-bright hover:text-gold-bright text-sm font-semibold tracking-wide transition-colors rounded-sm"
               >
                 Devenir partenaire
               </Link>
@@ -101,7 +101,7 @@ function HomePage() {
           <div className="mx-auto max-w-7xl px-6 lg:px-10 grid grid-cols-2 md:grid-cols-4">
             {stats.map((s) => (
               <div key={s.label} className="py-6 md:py-8 border-l border-white/10 first:border-l-0 pl-6">
-                <div className="text-3xl md:text-4xl font-display font-bold text-gold">{s.value}</div>
+                <div className="text-3xl md:text-4xl font-display font-bold text-gold-bright">{s.value}</div>
                 <div className="mt-2 inline-block px-2 py-1 text-xs tracking-[0.2em] text-white/90 uppercase font-semibold">{s.label}</div>
               </div>
             ))}

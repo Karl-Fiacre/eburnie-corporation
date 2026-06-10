@@ -27,10 +27,8 @@ export function SiteNavbar() {
 
   return (
     <header
-      className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? "bg-background/85 backdrop-blur-xl border-b border-border shadow-sm"
-          : "bg-transparent"
+      className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 bg-background/95 backdrop-blur-xl border-b ${
+        scrolled ? "border-border shadow-md" : "border-border/60 shadow-sm"
       }`}
     >
       <div className="mx-auto max-w-7xl px-6 lg:px-10 h-20 flex items-center justify-between">
@@ -46,20 +44,20 @@ export function SiteNavbar() {
           </div>
         </Link>
 
-        <nav className="hidden lg:flex items-center gap-1">
+        <nav className="hidden lg:flex items-center gap-1.5">
           {links.map((l) => (
             <Link
               key={l.to}
               to={l.to}
               activeOptions={{ exact: l.to === "/" }}
-              className="px-3 py-2 text-sm font-medium text-foreground/80 hover:text-foreground transition-colors relative group"
-              activeProps={{ className: "text-foreground" }}
+              className="px-3.5 py-2 rounded-full text-sm font-semibold text-foreground/80 bg-foreground/[0.04] hover:bg-prestige hover:text-white transition-colors"
+              activeProps={{ className: "bg-prestige text-white" }}
             >
               {l.label}
-              <span className="absolute left-3 right-3 -bottom-0.5 h-px bg-gold scale-x-0 group-hover:scale-x-100 transition-transform origin-left data-[status=active]:scale-x-100" />
             </Link>
           ))}
         </nav>
+
 
         <Link
           to="/partners"

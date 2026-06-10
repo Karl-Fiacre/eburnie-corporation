@@ -2,27 +2,41 @@ import { createFileRoute } from "@tanstack/react-router";
 import heroImg from "@/assets/hero-about.jpg";
 import { PageHero } from "@/components/PageHero";
 import { Target, Eye, Heart, Users, Building, Globe } from "lucide-react";
+import { SITE_URL } from "@/lib/site";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "À Propos — Eburnie Corporation" },
-      { name: "description", content: "Histoire, vision, mission, valeurs et gouvernance d'Eburnie Corporation." },
+      { title: "À Propos — Eburnie Corporation (Côte d'Ivoire)" },
+      {
+        name: "description",
+        content:
+          "Histoire, vision, mission, valeurs et gouvernance d'Eburnie Corporation, holding multisectorielle basée à Abidjan, Côte d'Ivoire.",
+      },
       { property: "og:title", content: "À Propos — Eburnie Corporation" },
-      { property: "og:url", content: "/about" },
+      {
+        property: "og:description",
+        content: "Holding ivoirienne — six filiales structurées sous une gouvernance unifiée à Abidjan.",
+      },
+      { property: "og:url", content: `${SITE_URL}/about` },
+      { name: "twitter:title", content: "À Propos — Eburnie Corporation" },
+      {
+        name: "twitter:description",
+        content: "Holding ivoirienne — six filiales structurées sous une gouvernance unifiée à Abidjan.",
+      },
     ],
-    links: [{ rel: "canonical", href: "/about" }],
+    links: [{ rel: "canonical", href: `${SITE_URL}/about` }],
   }),
   component: AboutPage,
 });
 
 const values = [
-  { icon: Target, title: "Mission", text: "Catalyser le développement économique africain par des activités structurantes et durables." },
-  { icon: Eye, title: "Vision", text: "Devenir une holding panafricaine de référence, reconnue pour son excellence et son impact." },
-  { icon: Heart, title: "Valeurs", text: "Intégrité, excellence opérationnelle, innovation, responsabilité et fierté africaine." },
+  { icon: Target, title: "Mission", text: "Catalyser le développement économique de la Côte d'Ivoire par des activités structurantes et durables." },
+  { icon: Eye, title: "Vision", text: "Devenir une holding ivoirienne de référence, reconnue pour son excellence et son impact." },
+  { icon: Heart, title: "Valeurs", text: "Intégrité, excellence opérationnelle, innovation, responsabilité et fierté ivoirienne." },
   { icon: Users, title: "Gouvernance", text: "Standards internationaux, comité stratégique multi-disciplinaire et reporting rigoureux." },
   { icon: Building, title: "Structure", text: "Six filiales spécialisées sous une holding mère unifiée et professionnelle." },
-  { icon: Globe, title: "Ambition", text: "Déployer notre modèle sur 15+ marchés africains à horizon 2030." },
+  { icon: Globe, title: "Ambition", text: "Consolider notre position en Côte d'Ivoire avant une expansion ciblée en Afrique de l'Ouest." },
 ];
 
 function AboutPage() {
@@ -30,8 +44,8 @@ function AboutPage() {
     <>
       <PageHero image={heroImg}
         eyebrow="À PROPOS"
-        title="Un groupe africain, une ambition continentale."
-        subtitle="Eburnie Corporation est née d'une conviction : l'Afrique mérite des champions économiques structurés, ambitieux et pérennes."
+        title="Un groupe ivoirien, une ambition régionale."
+        subtitle="Eburnie Corporation est née d'une conviction : la Côte d'Ivoire mérite des champions économiques structurés, ambitieux et pérennes."
       />
       <section className="py-24">
         <div className="mx-auto max-w-7xl px-6 lg:px-10 grid lg:grid-cols-2 gap-16">
@@ -39,8 +53,8 @@ function AboutPage() {
             <div className="text-xs tracking-[0.32em] text-gold">NOTRE HISTOIRE</div>
             <h2 className="mt-4 text-3xl md:text-4xl font-bold">D'une vision à un groupe multisectoriel.</h2>
             <div className="mt-6 space-y-4 text-muted-foreground leading-relaxed">
-              <p>Fondé avec l'ambition de transformer le paysage économique africain, Eburnie Corporation a structuré progressivement six filiales complémentaires, chacune répondant à un besoin stratégique du continent.</p>
-              <p>De l'e-commerce à la logistique, de l'immobilier aux échanges internationaux, le groupe s'appuie sur une gouvernance moderne pour bâtir un acteur de référence.</p>
+              <p>Fondé avec l'ambition de transformer le paysage économique ivoirien, Eburnie Corporation a structuré progressivement six filiales complémentaires, chacune répondant à un besoin stratégique du pays.</p>
+              <p>De l'e-commerce à la logistique, de l'immobilier aux échanges internationaux, le groupe s'appuie sur une gouvernance moderne pour bâtir un acteur de référence en Côte d'Ivoire, avant d'envisager une extension à l'Afrique de l'Ouest.</p>
             </div>
           </div>
           <div className="relative">

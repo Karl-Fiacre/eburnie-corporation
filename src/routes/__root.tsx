@@ -14,6 +14,7 @@ import { reportLovableError } from "../lib/lovable-error-reporting";
 import { SiteNavbar } from "../components/SiteNavbar";
 import { SiteFooter } from "../components/SiteFooter";
 import { Toaster } from "sonner";
+import { SITE_URL, SITE_NAME, SITE_LOCALE } from "../lib/site";
 
 function NotFoundComponent() {
   return (
@@ -80,21 +81,39 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Eburnie Corporation — Groupe multisectoriel africain" },
+      { title: "Eburnie Corporation — Groupe multisectoriel ivoirien (Abidjan)" },
       {
         name: "description",
         content:
-          "Eburnie Corporation est un groupe multisectoriel africain opérant dans le commerce, la mobilité, l'immobilier, la logistique, les échanges internationaux et l'événementiel.",
+          "Eburnie Corporation est un groupe multisectoriel basé en Côte d'Ivoire, opérant dans le commerce, la mobilité, l'immobilier, la logistique, les échanges internationaux et l'événementiel.",
       },
       { name: "author", content: "Eburnie Corporation" },
+      { name: "robots", content: "index, follow" },
+      { name: "language", content: "French" },
+      { name: "geo.region", content: "CI" },
+      { name: "geo.placename", content: "Abidjan" },
+      { name: "geo.position", content: "5.3600;-4.0083" },
+      { name: "ICBM", content: "5.3600, -4.0083" },
       { property: "og:title", content: "Eburnie Corporation" },
       {
         property: "og:description",
-        content: "Construire les opportunités de demain en Afrique.",
+        content:
+          "Groupe multisectoriel ivoirien : commerce, mobilité, immobilier, logistique, import-export, événementiel. Construire les opportunités de demain en Côte d'Ivoire.",
       },
       { property: "og:type", content: "website" },
-      { property: "og:site_name", content: "Eburnie Corporation" },
+      { property: "og:site_name", content: SITE_NAME },
+      { property: "og:locale", content: SITE_LOCALE },
+      { property: "og:url", content: SITE_URL },
+      { property: "og:image", content: `${SITE_URL}/og-image.jpg` },
+      { property: "og:image:width", content: "1200" },
+      { property: "og:image:height", content: "630" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Eburnie Corporation" },
+      {
+        name: "twitter:description",
+        content: "Groupe multisectoriel ivoirien — commerce, mobilité, immobilier, logistique, import-export, événementiel.",
+      },
+      { name: "twitter:image", content: `${SITE_URL}/og-image.jpg` },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
@@ -103,6 +122,39 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         rel: "stylesheet",
         href: "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@500;600;700;800&display=swap",
+      },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          name: "Eburnie Corporation",
+          alternateName: "Eburnie",
+          url: SITE_URL,
+          logo: `${SITE_URL}/favicon.png`,
+          description:
+            "Groupe multisectoriel ivoirien opérant dans le commerce, la mobilité, l'immobilier, la logistique, les échanges internationaux et l'événementiel.",
+          foundingDate: "2024",
+          address: {
+            "@type": "PostalAddress",
+            addressLocality: "Abidjan",
+            addressCountry: "CI",
+          },
+          areaServed: { "@type": "Country", name: "Côte d'Ivoire" },
+          sameAs: [],
+        }),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          name: "Eburnie Corporation",
+          url: SITE_URL,
+          inLanguage: "fr-CI",
+        }),
       },
     ],
   }),
@@ -114,7 +166,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
 function RootShell({ children }: { children: ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="fr-CI">
       <head>
         <HeadContent />
       </head>

@@ -4,15 +4,30 @@ import { PageHero } from "@/components/PageHero";
 import { useState } from "react";
 import { Search } from "lucide-react";
 
+import { SITE_URL } from "@/lib/site";
+
 export const Route = createFileRoute("/news")({
   head: () => ({
     meta: [
-      { title: "Actualités — Eburnie Corporation" },
-      { name: "description", content: "Actualités du groupe Eburnie Corporation et de ses filiales." },
+      { title: "Actualités — Eburnie Corporation (Côte d'Ivoire)" },
+      {
+        name: "description",
+        content:
+          "Actualités du groupe Eburnie Corporation et de ses filiales en Côte d'Ivoire : Boutique, Auto, Immobilier, China Deals, Cargo, Event.",
+      },
       { property: "og:title", content: "Actualités — Eburnie Corporation" },
-      { property: "og:url", content: "/news" },
+      {
+        property: "og:description",
+        content: "Suivez les dernières actualités du groupe Eburnie en Côte d'Ivoire.",
+      },
+      { property: "og:url", content: `${SITE_URL}/news` },
+      { name: "twitter:title", content: "Actualités — Eburnie Corporation" },
+      {
+        name: "twitter:description",
+        content: "Suivez les dernières actualités du groupe Eburnie en Côte d'Ivoire.",
+      },
     ],
-    links: [{ rel: "canonical", href: "/news" }],
+    links: [{ rel: "canonical", href: `${SITE_URL}/news` }],
   }),
   component: NewsPage,
 });
@@ -20,12 +35,12 @@ export const Route = createFileRoute("/news")({
 const categories = ["Tous", "Groupe", "Boutique", "Auto", "Immobilier", "China Deals", "Cargo", "Event"];
 
 const articles = [
-  { cat: "Groupe", title: "Eburnie Corporation officialise sa structure de holding multisectorielle", date: "5 juin 2026", excerpt: "Le groupe finalise sa gouvernance et confirme son ambition panafricaine." },
-  { cat: "Cargo", title: "Eburnie Cargo étend son réseau logistique en Afrique de l'Ouest", date: "28 mai 2026", excerpt: "Nouveaux corridors logistiques entre les principaux ports régionaux." },
-  { cat: "Boutique", title: "Eburnie Boutique dépasse les 10 000 références produits", date: "20 mai 2026", excerpt: "Une croissance soutenue du catalogue panafricain." },
-  { cat: "China Deals", title: "Mission de sourcing stratégique à Guangzhou", date: "12 mai 2026", excerpt: "Renforcement des partenariats fournisseurs chinois." },
-  { cat: "Immobilier", title: "Lancement du premier projet résidentiel premium", date: "1 mai 2026", excerpt: "Eburnie Immobilier ouvre la commercialisation de sa première résidence." },
-  { cat: "Event", title: "Forum panafricain des investisseurs 2026", date: "20 avril 2026", excerpt: "Eburnie Event accueille 500 décideurs économiques." },
+  { cat: "Groupe", title: "Eburnie Corporation officialise sa structure de holding multisectorielle en Côte d'Ivoire", date: "5 juin 2026", excerpt: "Le groupe finalise sa gouvernance et confirme son ancrage ivoirien." },
+  { cat: "Cargo", title: "Eburnie Cargo renforce son réseau logistique au départ d'Abidjan", date: "28 mai 2026", excerpt: "Nouveaux corridors logistiques au départ du port d'Abidjan." },
+  { cat: "Boutique", title: "Eburnie Boutique dépasse les 10 000 références produits", date: "20 mai 2026", excerpt: "Une croissance soutenue du catalogue sur le marché ivoirien." },
+  { cat: "China Deals", title: "Mission de sourcing stratégique à Guangzhou", date: "12 mai 2026", excerpt: "Renforcement des partenariats fournisseurs chinois pour les importateurs ivoiriens." },
+  { cat: "Immobilier", title: "Lancement du premier projet résidentiel premium à Abidjan", date: "1 mai 2026", excerpt: "Eburnie Immobilier ouvre la commercialisation de sa première résidence." },
+  { cat: "Event", title: "Forum ivoirien des investisseurs 2026", date: "20 avril 2026", excerpt: "Eburnie Event accueille 500 décideurs économiques à Abidjan." },
 ];
 
 function NewsPage() {

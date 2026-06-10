@@ -4,21 +4,36 @@ import { PageHero } from "@/components/PageHero";
 import { TrendingUp, BarChart3, Globe, ShieldCheck } from "lucide-react";
 import { ContactForm } from "@/components/ContactForm";
 
+import { SITE_URL } from "@/lib/site";
+
 export const Route = createFileRoute("/investors")({
   head: () => ({
     meta: [
-      { title: "Investisseurs — Eburnie Corporation" },
-      { name: "description", content: "Opportunités d'investissement et stratégie de croissance d'Eburnie Corporation." },
+      { title: "Investisseurs — Eburnie Corporation (Côte d'Ivoire)" },
+      {
+        name: "description",
+        content:
+          "Opportunités d'investissement et stratégie de croissance d'Eburnie Corporation, holding multisectorielle ivoirienne.",
+      },
       { property: "og:title", content: "Investisseurs — Eburnie Corporation" },
-      { property: "og:url", content: "/investors" },
+      {
+        property: "og:description",
+        content: "Co-construire la prochaine génération de champions ivoiriens. Opportunités d'investissement et gouvernance aux standards internationaux.",
+      },
+      { property: "og:url", content: `${SITE_URL}/investors` },
+      { name: "twitter:title", content: "Investisseurs — Eburnie Corporation" },
+      {
+        name: "twitter:description",
+        content: "Co-construire la prochaine génération de champions ivoiriens.",
+      },
     ],
-    links: [{ rel: "canonical", href: "/investors" }],
+    links: [{ rel: "canonical", href: `${SITE_URL}/investors` }],
   }),
   component: InvestorsPage,
 });
 
 const pillars = [
-  { icon: TrendingUp, t: "Stratégie de croissance", d: "Expansion progressive sur 15+ marchés africains à horizon 2030." },
+  { icon: TrendingUp, t: "Stratégie de croissance", d: "Consolidation en Côte d'Ivoire, puis extension ciblée en Afrique de l'Ouest." },
   { icon: BarChart3, t: "Vision financière", d: "Discipline opérationnelle, transparence et création de valeur long-terme." },
   { icon: Globe, t: "Secteurs d'investissement", d: "Commerce, logistique, immobilier, mobilité, échanges internationaux." },
   { icon: ShieldCheck, t: "Gouvernance", d: "Standards internationaux, reporting rigoureux et comité stratégique." },
@@ -29,7 +44,7 @@ function InvestorsPage() {
     <>
       <PageHero image={heroImg}
         eyebrow="INVESTISSEURS"
-        title="Co-construire la prochaine génération de champions africains."
+        title="Co-construire la prochaine génération de champions ivoiriens."
         subtitle="Eburnie Corporation ouvre son capital et ses opportunités à des partenaires partageant notre vision long-terme."
       />
       <section className="py-24">

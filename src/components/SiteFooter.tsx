@@ -34,8 +34,8 @@ export function SiteFooter() {
             </div>
           </div>
           <p className="mt-6 text-sm text-white/65 leading-relaxed max-w-sm">
-            Groupe multisectoriel africain bâtissant les opportunités de demain à
-            travers six pôles d'activité stratégiques.
+            Groupe multisectoriel ivoirien basé à Abidjan, bâtissant les
+            opportunités de demain à travers six pôles d'activité stratégiques.
           </p>
           <div className="mt-6 flex gap-3">
             {[Linkedin, Facebook, Instagram, Mail].map((Icon, i) => (
@@ -106,7 +106,7 @@ export function SiteFooter() {
       <div className="border-t border-white/10">
         <div className="mx-auto max-w-7xl px-6 lg:px-10 py-6 flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-white/50">
           <div>© {new Date().getFullYear()} Eburnie Corporation. Tous droits réservés.</div>
-          <div className="tracking-[0.2em]">CONSTRUIRE L'AFRIQUE DE DEMAIN</div>
+          <div className="tracking-[0.2em]">CONSTRUIRE LA CÔTE D'IVOIRE DE DEMAIN</div>
         </div>
       </div>
     </footer>

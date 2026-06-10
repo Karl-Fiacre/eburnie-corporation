@@ -4,15 +4,51 @@ import { PageHero } from "@/components/PageHero";
 import { MapPin, Phone, Mail, MessageCircle } from "lucide-react";
 import { ContactForm } from "@/components/ContactForm";
 
+import { SITE_URL } from "@/lib/site";
+
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact — Eburnie Corporation" },
-      { name: "description", content: "Contactez le groupe Eburnie Corporation." },
+      { title: "Contact — Eburnie Corporation (Abidjan, Côte d'Ivoire)" },
+      {
+        name: "description",
+        content:
+          "Contactez le groupe Eburnie Corporation à Abidjan, Côte d'Ivoire : téléphone, email, WhatsApp et formulaire en ligne.",
+      },
       { property: "og:title", content: "Contact — Eburnie Corporation" },
-      { property: "og:url", content: "/contact" },
+      {
+        property: "og:description",
+        content: "Notre équipe à Abidjan vous répond sous 48h ouvrées.",
+      },
+      { property: "og:url", content: `${SITE_URL}/contact` },
+      { name: "twitter:title", content: "Contact — Eburnie Corporation" },
+      {
+        name: "twitter:description",
+        content: "Notre équipe à Abidjan vous répond sous 48h ouvrées.",
+      },
     ],
-    links: [{ rel: "canonical", href: "/contact" }],
+    links: [{ rel: "canonical", href: `${SITE_URL}/contact` }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "ContactPage",
+          name: "Contact — Eburnie Corporation",
+          url: `${SITE_URL}/contact`,
+          mainEntity: {
+            "@type": "Organization",
+            name: "Eburnie Corporation",
+            email: "contact@eburniecorporation.com",
+            address: {
+              "@type": "PostalAddress",
+              addressLocality: "Abidjan",
+              addressCountry: "CI",
+            },
+          },
+        }),
+      },
+    ],
   }),
   component: ContactPage,
 });

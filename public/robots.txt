@@ -1,2 +1,4 @@
 User-agent: *
 Allow: /
+
+Sitemap: https://eburnie-corporation.lovable.app/sitemap.xml

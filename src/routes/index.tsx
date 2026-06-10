@@ -44,10 +44,11 @@ export const Route = createFileRoute("/")({
 
 const stats = [
   { value: "6", label: "Pôles d'activité" },
-  { value: "15+", label: "Pays ciblés" },
+  { value: "CI", label: "Marché principal" },
   { value: "500+", label: "Collaborateurs visés" },
   { value: "2024", label: "Année de fondation" },
 ];
+
 
 const subs = [
   { icon: ShoppingBag, name: "Eburnie Boutique", desc: "E-commerce ivoirien", url: "https://boutique.eburniecorporation.com" },

@@ -94,7 +94,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "geo.placename", content: "Abidjan" },
       { name: "geo.position", content: "5.3600;-4.0083" },
       { name: "ICBM", content: "5.3600, -4.0083" },
-      { property: "og:title", content: "Eburnie Corporation" },
+      { property: "og:title", content: "Eburnie Corporation — Groupe multisectoriel ivoirien (Abidjan)" },
       {
         property: "og:description",
         content:
@@ -108,12 +108,17 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:image:width", content: "1200" },
       { property: "og:image:height", content: "630" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Eburnie Corporation" },
+      { name: "twitter:title", content: "Eburnie Corporation — Groupe multisectoriel ivoirien (Abidjan)" },
       {
         name: "twitter:description",
         content: "Groupe multisectoriel ivoirien — commerce, mobilité, immobilier, logistique, import-export, événementiel.",
       },
       { name: "twitter:image", content: `${SITE_URL}/og-image.jpg` },
+      { name: "description", content: "Eburnie Corporation's official website showcases its diverse African multisectoral group." },
+      { property: "og:description", content: "Eburnie Corporation's official website showcases its diverse African multisectoral group." },
+      { name: "twitter:description", content: "Eburnie Corporation's official website showcases its diverse African multisectoral group." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/e27a4289-40ee-4b8c-bca6-10b85cec6ad0/id-preview-9a8634f3--dc81b7d1-0103-4af6-9631-19f30881ee20.lovable.app-1781068390405.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/e27a4289-40ee-4b8c-bca6-10b85cec6ad0/id-preview-9a8634f3--dc81b7d1-0103-4af6-9631-19f30881ee20.lovable.app-1781068390405.png" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },

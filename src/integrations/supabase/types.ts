@@ -404,6 +404,33 @@ export type Database = {
         }
         Relationships: []
       }
+      newsletter_subscribers_Boutique: {
+        Row: {
+          created_at: string
+          email: string
+          id: string
+          is_active: boolean
+          source: string | null
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          email: string
+          id?: string
+          is_active?: boolean
+          source?: string | null
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          email?: string
+          id?: string
+          is_active?: boolean
+          source?: string | null
+          updated_at?: string
+        }
+        Relationships: []
+      }
       order_items: {
         Row: {
           created_at: string
@@ -684,6 +711,54 @@ export type Database = {
             referencedColumns: ["id"]
           },
         ]
+      }
+      pricing_categories_cargo: {
+        Row: {
+          created_at: string
+          delivery_days: number
+          description: string | null
+          icon_name: string | null
+          id: string
+          is_active: boolean
+          label: string
+          mode: Database["public"]["Enums"]["transport_mode"]
+          price_xof: number
+          sort_order: number
+          tag: string | null
+          unit: string
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          delivery_days?: number
+          description?: string | null
+          icon_name?: string | null
+          id?: string
+          is_active?: boolean
+          label: string
+          mode: Database["public"]["Enums"]["transport_mode"]
+          price_xof: number
+          sort_order?: number
+          tag?: string | null
+          unit?: string
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          delivery_days?: number
+          description?: string | null
+          icon_name?: string | null
+          id?: string
+          is_active?: boolean
+          label?: string
+          mode?: Database["public"]["Enums"]["transport_mode"]
+          price_xof?: number
+          sort_order?: number
+          tag?: string | null
+          unit?: string
+          updated_at?: string
+        }
+        Relationships: []
       }
       products_Boutique: {
         Row: {
@@ -1066,6 +1141,47 @@ export type Database = {
           },
         ]
       }
+      shipment_events_Boutique: {
+        Row: {
+          created_at: string
+          description: string | null
+          event_at: string
+          id: string
+          is_auto: boolean
+          location: string | null
+          shipment_id: string
+          status: Database["public"]["Enums"]["boutique_shipment_status"]
+        }
+        Insert: {
+          created_at?: string
+          description?: string | null
+          event_at?: string
+          id?: string
+          is_auto?: boolean
+          location?: string | null
+          shipment_id: string
+          status: Database["public"]["Enums"]["boutique_shipment_status"]
+        }
+        Update: {
+          created_at?: string
+          description?: string | null
+          event_at?: string
+          id?: string
+          is_auto?: boolean
+          location?: string | null
+          shipment_id?: string
+          status?: Database["public"]["Enums"]["boutique_shipment_status"]
+        }
+        Relationships: [
+          {
+            foreignKeyName: "shipment_events_Boutique_shipment_id_fkey"
+            columns: ["shipment_id"]
+            isOneToOne: false
+            referencedRelation: "shipments_Boutique"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       shipment_tracking_cargo: {
         Row: {
           created_at: string
@@ -1104,6 +1220,68 @@ export type Database = {
           },
         ]
       }
+      shipments_Boutique: {
+        Row: {
+          carrier: string | null
+          created_at: string
+          delivered_at: string | null
+          estimated_delivery: string | null
+          id: string
+          notes: string | null
+          order_id: string | null
+          recipient_address: string | null
+          recipient_city: string | null
+          recipient_name: string
+          recipient_phone: string
+          shipped_at: string | null
+          status: Database["public"]["Enums"]["boutique_shipment_status"]
+          tracking_number: string
+          updated_at: string
+        }
+        Insert: {
+          carrier?: string | null
+          created_at?: string
+          delivered_at?: string | null
+          estimated_delivery?: string | null
+          id?: string
+          notes?: string | null
+          order_id?: string | null
+          recipient_address?: string | null
+          recipient_city?: string | null
+          recipient_name: string
+          recipient_phone: string
+          shipped_at?: string | null
+          status?: Database["public"]["Enums"]["boutique_shipment_status"]
+          tracking_number: string
+          updated_at?: string
+        }
+        Update: {
+          carrier?: string | null
+          created_at?: string
+          delivered_at?: string | null
+          estimated_delivery?: string | null
+          id?: string
+          notes?: string | null
+          order_id?: string | null
+          recipient_address?: string | null
+          recipient_city?: string | null
+          recipient_name?: string
+          recipient_phone?: string
+          shipped_at?: string | null
+          status?: Database["public"]["Enums"]["boutique_shipment_status"]
+          tracking_number?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "shipments_Boutique_order_id_fkey"
+            columns: ["order_id"]
+            isOneToOne: false
+            referencedRelation: "orders_Boutique"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       shipments_cargo: {
         Row: {
           actual_delivery: string | null
@@ -1118,6 +1296,7 @@ export type Database = {
           origin: string
           recipient_name: string
           recipient_phone: string
+          sender_email: string | null
           sender_name: string
           sender_phone: string | null
           status: Database["public"]["Enums"]["shipment_status"]
@@ -1141,6 +1320,7 @@ export type Database = {
           origin?: string
           recipient_name: string
           recipient_phone: string
+          sender_email?: string | null
           sender_name: string
           sender_phone?: string | null
           status?: Database["public"]["Enums"]["shipment_status"]
@@ -1164,6 +1344,7 @@ export type Database = {
           origin?: string
           recipient_name?: string
           recipient_phone?: string
+          sender_email?: string | null
           sender_name?: string
           sender_phone?: string | null
           status?: Database["public"]["Enums"]["shipment_status"]
@@ -1184,12 +1365,100 @@ export type Database = {
           },
         ]
       }
+      simulations_auto: {
+        Row: {
+          budget_xof: number | null
+          created_at: string
+          customer_city: string | null
+          customer_email: string | null
+          customer_name: string
+          customer_phone: string
+          customs_xof: number
+          desired_delay_days: number | null
+          destination_port: string | null
+          id: string
+          insurance: boolean
+          notes: string | null
+          reference: string
+          service_fee_xof: number
+          shipping_mode: string
+          shipping_xof: number
+          status: string
+          total_xof: number
+          updated_at: string
+          vat_xof: number
+          vehicle_age: number
+          vehicle_brand: string | null
+          vehicle_fuel: string | null
+          vehicle_model: string | null
+          vehicle_price_xof: number
+          vehicle_year: number | null
+        }
+        Insert: {
+          budget_xof?: number | null
+          created_at?: string
+          customer_city?: string | null
+          customer_email?: string | null
+          customer_name: string
+          customer_phone: string
+          customs_xof: number
+          desired_delay_days?: number | null
+          destination_port?: string | null
+          id?: string
+          insurance?: boolean
+          notes?: string | null
+          reference: string
+          service_fee_xof: number
+          shipping_mode: string
+          shipping_xof: number
+          status?: string
+          total_xof: number
+          updated_at?: string
+          vat_xof: number
+          vehicle_age?: number
+          vehicle_brand?: string | null
+          vehicle_fuel?: string | null
+          vehicle_model?: string | null
+          vehicle_price_xof: number
+          vehicle_year?: number | null
+        }
+        Update: {
+          budget_xof?: number | null
+          created_at?: string
+          customer_city?: string | null
+          customer_email?: string | null
+          customer_name?: string
+          customer_phone?: string
+          customs_xof?: number
+          desired_delay_days?: number | null
+          destination_port?: string | null
+          id?: string
+          insurance?: boolean
+          notes?: string | null
+          reference?: string
+          service_fee_xof?: number
+          shipping_mode?: string
+          shipping_xof?: number
+          status?: string
+          total_xof?: number
+          updated_at?: string
+          vat_xof?: number
+          vehicle_age?: number
+          vehicle_brand?: string | null
+          vehicle_fuel?: string | null
+          vehicle_model?: string | null
+          vehicle_price_xof?: number
+          vehicle_year?: number | null
+        }
+        Relationships: []
+      }
       tracking_events_cargo: {
         Row: {
           created_at: string
           description: string | null
           event_date: string
           id: string
+          is_auto: boolean
           location: string | null
           shipment_id: string
           status: Database["public"]["Enums"]["shipment_status"]
@@ -1199,6 +1468,7 @@ export type Database = {
           description?: string | null
           event_date?: string
           id?: string
+          is_auto?: boolean
           location?: string | null
           shipment_id: string
           status: Database["public"]["Enums"]["shipment_status"]
@@ -1208,6 +1478,7 @@ export type Database = {
           description?: string | null
           event_date?: string
           id?: string
+          is_auto?: boolean
           location?: string | null
           shipment_id?: string
           status?: Database["public"]["Enums"]["shipment_status"]
@@ -1374,7 +1645,72 @@ export type Database = {
         }
         Returns: string
       }
+      create_shipment_request: {
+        Args: {
+          p_declared_price: number
+          p_description: string
+          p_instructions: string
+          p_parcel_type: string
+          p_recipient_address: string
+          p_recipient_city: string
+          p_recipient_name: string
+          p_recipient_phone: string
+          p_sender_email: string
+          p_sender_name: string
+          p_sender_phone: string
+          p_transport_mode: Database["public"]["Enums"]["transport_mode"]
+          p_volume: number
+          p_weight: number
+        }
+        Returns: Json
+      }
+      create_simulation_auto: {
+        Args: {
+          p_budget_xof: number
+          p_customer_city: string
+          p_customer_email: string
+          p_customer_name: string
+          p_customer_phone: string
+          p_customs_xof: number
+          p_desired_delay_days: number
+          p_destination_port: string
+          p_insurance: boolean
+          p_notes: string
+          p_service_fee_xof: number
+          p_shipping_mode: string
+          p_shipping_xof: number
+          p_total_xof: number
+          p_vat_xof: number
+          p_vehicle_age: number
+          p_vehicle_brand: string
+          p_vehicle_fuel: string
+          p_vehicle_model: string
+          p_vehicle_price_xof: number
+          p_vehicle_year: number
+        }
+        Returns: Json
+      }
+      gen_boutique_tracking_number: { Args: never; Returns: string }
+      gen_tracking_number: { Args: never; Returns: string }
+      get_boutique_shipment: { Args: { p_tracking: string }; Returns: Json }
       get_order_by_number: { Args: { p_order_number: string }; Returns: Json }
+      get_shipments_by_contact: {
+        Args: { p_contact: string }
+        Returns: {
+          actual_delivery: string
+          created_at: string
+          destination: string
+          estimated_delivery: string
+          origin: string
+          recipient_name: string
+          recipient_phone: string
+          status: Database["public"]["Enums"]["shipment_status"]
+          tracking_number: string
+          transport_mode: Database["public"]["Enums"]["transport_mode"]
+          volume: number
+          weight: number
+        }[]
+      }
       get_taken_slots: {
         Args: { _date: string }
         Returns: {
@@ -1398,6 +1734,7 @@ export type Database = {
         }
         Returns: string
       }
+      validate_order: { Args: { p_order_id: string }; Returns: Json }
     }
     Enums: {
       app_role: "admin" | "agent" | "client"
@@ -1413,6 +1750,11 @@ export type Database = {
         | "delivered"
         | "cancelled"
       boutique_promo_type: "percent" | "fixed"
+      boutique_shipment_status:
+        | "preparation"
+        | "en_livraison"
+        | "livre"
+        | "annule"
       estimation_status: "pending" | "approved" | "rejected" | "converted"
       message_status: "new" | "read" | "replied" | "archived"
       order_status:
@@ -1576,6 +1918,12 @@ export const Constants = {
         "cancelled",
       ],
       boutique_promo_type: ["percent", "fixed"],
+      boutique_shipment_status: [
+        "preparation",
+        "en_livraison",
+        "livre",
+        "annule",
+      ],
       estimation_status: ["pending", "approved", "rejected", "converted"],
       message_status: ["new", "read", "replied", "archived"],
       order_status: [

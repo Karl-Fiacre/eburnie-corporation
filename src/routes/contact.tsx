@@ -4,7 +4,7 @@ import { PageHero } from "@/components/PageHero";
 import { MapPin, Phone, Mail, MessageCircle } from "lucide-react";
 import { ContactForm } from "@/components/ContactForm";
 
-import { SITE_URL } from "@/lib/site";
+import { SITE_URL, seoLinks } from "@/lib/site";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -27,7 +27,7 @@ export const Route = createFileRoute("/contact")({
         content: "Notre équipe à Abidjan vous répond sous 48h ouvrées.",
       },
     ],
-    links: [{ rel: "canonical", href: `${SITE_URL}/contact` }],
+    links: seoLinks("/contact"),
     scripts: [
       {
         type: "application/ld+json",

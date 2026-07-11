@@ -4,7 +4,7 @@ import { PageHero } from "@/components/PageHero";
 import { Handshake, Landmark, Truck } from "lucide-react";
 import { ContactForm } from "@/components/ContactForm";
 
-import { SITE_URL } from "@/lib/site";
+import { SITE_URL, seoLinks } from "@/lib/site";
 
 export const Route = createFileRoute("/partners")({
   head: () => ({
@@ -27,7 +27,7 @@ export const Route = createFileRoute("/partners")({
         content: "Construisons ensemble un écosystème performant en Côte d'Ivoire.",
       },
     ],
-    links: [{ rel: "canonical", href: `${SITE_URL}/partners` }],
+    links: seoLinks("/partners"),
   }),
   component: PartnersPage,
 });

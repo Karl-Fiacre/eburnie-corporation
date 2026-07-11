@@ -4,7 +4,7 @@ import { PageHero } from "@/components/PageHero";
 import { useState } from "react";
 import { Search } from "lucide-react";
 
-import { SITE_URL } from "@/lib/site";
+import { SITE_URL, seoLinks } from "@/lib/site";
 
 export const Route = createFileRoute("/news")({
   head: () => ({
@@ -27,7 +27,7 @@ export const Route = createFileRoute("/news")({
         content: "Suivez les dernières actualités du groupe Eburnie en Côte d'Ivoire.",
       },
     ],
-    links: [{ rel: "canonical", href: `${SITE_URL}/news` }],
+    links: seoLinks("/news"),
   }),
   component: NewsPage,
 });

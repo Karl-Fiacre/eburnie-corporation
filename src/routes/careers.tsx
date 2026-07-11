@@ -3,7 +3,7 @@ import heroImg from "@/assets/hero-careers.jpg";
 import { PageHero } from "@/components/PageHero";
 import { Briefcase, GraduationCap, FileText, MapPin } from "lucide-react";
 
-import { SITE_URL } from "@/lib/site";
+import { SITE_URL, seoLinks } from "@/lib/site";
 
 export const Route = createFileRoute("/careers")({
   head: () => ({
@@ -26,7 +26,7 @@ export const Route = createFileRoute("/careers")({
         content: "Rejoignez ceux qui construisent la Côte d'Ivoire de demain.",
       },
     ],
-    links: [{ rel: "canonical", href: `${SITE_URL}/careers` }],
+    links: seoLinks("/careers"),
   }),
   component: CareersPage,
 });

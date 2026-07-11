@@ -13,7 +13,7 @@ import {
   Compass,
 } from "lucide-react";
 
-import { SITE_URL } from "@/lib/site";
+import { SITE_URL, seoLinks } from "@/lib/site";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -37,7 +37,7 @@ export const Route = createFileRoute("/")({
         content: "Holding multisectorielle ivoirienne : commerce, mobilité, immobilier, logistique, import-export, événementiel.",
       },
     ],
-    links: [{ rel: "canonical", href: `${SITE_URL}/` }],
+    links: seoLinks("/"),
   }),
   component: HomePage,
 });

@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import heroImg from "@/assets/hero-about.jpg";
 import { PageHero } from "@/components/PageHero";
 import { Target, Eye, Heart, Users, Building, Globe } from "lucide-react";
-import { SITE_URL } from "@/lib/site";
+import { SITE_URL, seoLinks } from "@/lib/site";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -25,7 +25,7 @@ export const Route = createFileRoute("/about")({
         content: "Holding ivoirienne — six filiales structurées sous une gouvernance unifiée à Abidjan.",
       },
     ],
-    links: [{ rel: "canonical", href: `${SITE_URL}/about` }],
+    links: seoLinks("/about"),
   }),
   component: AboutPage,
 });

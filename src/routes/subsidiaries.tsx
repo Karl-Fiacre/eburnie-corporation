@@ -3,7 +3,7 @@ import heroImg from "@/assets/hero-subsidiaries.jpg";
 import { PageHero } from "@/components/PageHero";
 import { ShoppingBag, Car, Building2, Globe2, Truck, CalendarRange, ArrowUpRight } from "lucide-react";
 
-import { SITE_URL } from "@/lib/site";
+import { SITE_URL, seoLinks } from "@/lib/site";
 
 export const Route = createFileRoute("/subsidiaries")({
   head: () => ({
@@ -26,7 +26,7 @@ export const Route = createFileRoute("/subsidiaries")({
         content: "Six filiales ivoiriennes : e-commerce, mobilité, immobilier, import-export, logistique, événementiel.",
       },
     ],
-    links: [{ rel: "canonical", href: `${SITE_URL}/subsidiaries` }],
+    links: seoLinks("/subsidiaries"),
   }),
   component: SubsidiariesPage,
 });

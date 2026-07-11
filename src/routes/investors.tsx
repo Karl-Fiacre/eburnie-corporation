@@ -4,7 +4,7 @@ import { PageHero } from "@/components/PageHero";
 import { TrendingUp, BarChart3, Globe, ShieldCheck } from "lucide-react";
 import { ContactForm } from "@/components/ContactForm";
 
-import { SITE_URL } from "@/lib/site";
+import { SITE_URL, seoLinks } from "@/lib/site";
 
 export const Route = createFileRoute("/investors")({
   head: () => ({
@@ -27,7 +27,7 @@ export const Route = createFileRoute("/investors")({
         content: "Co-construire la prochaine génération de champions ivoiriens.",
       },
     ],
-    links: [{ rel: "canonical", href: `${SITE_URL}/investors` }],
+    links: seoLinks("/investors"),
   }),
   component: InvestorsPage,
 });

@@ -167,8 +167,3 @@ function ValuesGrid() {
     </motion.div>
   );
 }
-        </div>
-      </section>
-    </>
-  );
-}

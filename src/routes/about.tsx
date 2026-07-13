@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import heroImg from "@/assets/hero-about.jpg";
 import { PageHero } from "@/components/PageHero";
 import { Target, Eye, Heart, Users, Building, Globe } from "lucide-react";
+import { motion, useReducedMotion } from "framer-motion";
 import { SITE_URL, seoLinks } from "@/lib/site";
 
 export const Route = createFileRoute("/about")({

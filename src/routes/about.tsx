@@ -69,18 +69,33 @@ function AboutPage() {
         </div>
       </section>
 
-      <section className="py-24 bg-secondary">
-        <div className="mx-auto max-w-7xl px-6 lg:px-10">
+      <section className="py-24 bg-secondary relative overflow-hidden">
+        <div className="absolute inset-0 pointer-events-none opacity-[0.04]" style={{ backgroundImage: "radial-gradient(circle at 1px 1px, var(--foreground) 1px, transparent 0)", backgroundSize: "32px 32px" }} />
+        <div className="mx-auto max-w-7xl px-6 lg:px-10 relative">
           <div className="max-w-2xl">
             <div className="text-xs tracking-[0.32em] text-gold">CE QUI NOUS GUIDE</div>
             <h2 className="mt-4 text-3xl md:text-4xl font-bold">Mission, vision et valeurs.</h2>
+            <p className="mt-4 text-muted-foreground leading-relaxed">Six piliers qui structurent notre manière de bâtir, décider et grandir en Côte d'Ivoire.</p>
           </div>
-          <div className="mt-14 grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-border">
-            {values.map((v) => (
-              <div key={v.title} className="bg-background p-8">
-                <v.icon className="text-gold" size={26} />
-                <div className="mt-5 font-display font-bold text-lg">{v.title}</div>
-                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{v.text}</p>
+          <div className="mt-14 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {values.map((v, i) => (
+              <div
+                key={v.title}
+                className="group relative bg-background p-8 rounded-sm border border-border/60 hover:border-gold/60 transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_20px_40px_-20px_rgba(0,0,0,0.15)] overflow-hidden"
+              >
+                <div className="absolute top-0 left-0 h-[2px] w-0 bg-gradient-gold group-hover:w-full transition-all duration-500" />
+                <div className="absolute -top-8 -right-8 w-32 h-32 rounded-full bg-gold/5 group-hover:bg-gold/10 transition-colors" />
+                <div className="absolute top-6 right-6 font-display text-xs tracking-[0.2em] text-muted-foreground/40 tabular-nums">
+                  0{i + 1}
+                </div>
+                <div className="relative">
+                  <div className="inline-flex h-14 w-14 items-center justify-center rounded-sm bg-gradient-to-br from-gold/15 to-gold/5 border border-gold/20 group-hover:from-gold/25 group-hover:to-gold/10 transition-colors">
+                    <v.icon className="text-gold" size={24} />
+                  </div>
+                  <div className="mt-6 font-display font-bold text-xl">{v.title}</div>
+                  <div className="mt-2 h-px w-10 bg-gold/40 group-hover:w-16 transition-all duration-500" />
+                  <p className="mt-4 text-sm text-muted-foreground leading-relaxed">{v.text}</p>
+                </div>
               </div>
             ))}
           </div>

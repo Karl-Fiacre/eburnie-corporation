@@ -299,6 +299,42 @@ export type Database = {
         }
         Relationships: []
       }
+      contact_messages_event: {
+        Row: {
+          created_at: string
+          email: string | null
+          id: string
+          message: string
+          name: string
+          phone: string | null
+          status: string
+          updated_at: string
+          whatsapp_target: string | null
+        }
+        Insert: {
+          created_at?: string
+          email?: string | null
+          id?: string
+          message: string
+          name: string
+          phone?: string | null
+          status?: string
+          updated_at?: string
+          whatsapp_target?: string | null
+        }
+        Update: {
+          created_at?: string
+          email?: string | null
+          id?: string
+          message?: string
+          name?: string
+          phone?: string | null
+          status?: string
+          updated_at?: string
+          whatsapp_target?: string | null
+        }
+        Relationships: []
+      }
       cookie_consents: {
         Row: {
           analytics: boolean
@@ -1097,6 +1133,66 @@ export type Database = {
           type?: Database["public"]["Enums"]["boutique_promo_type"]
           updated_at?: string
           value?: number
+        }
+        Relationships: []
+      }
+      quote_requests_event: {
+        Row: {
+          budget: string | null
+          category: string
+          created_at: string
+          customer_name: string
+          customer_phone: string
+          destination: string | null
+          duration_days: number | null
+          estimate_xof: number | null
+          event_date: string | null
+          id: string
+          notes: string | null
+          options: Json | null
+          people: number | null
+          status: string
+          subtype: string | null
+          updated_at: string
+          whatsapp_target: string | null
+        }
+        Insert: {
+          budget?: string | null
+          category: string
+          created_at?: string
+          customer_name: string
+          customer_phone: string
+          destination?: string | null
+          duration_days?: number | null
+          estimate_xof?: number | null
+          event_date?: string | null
+          id?: string
+          notes?: string | null
+          options?: Json | null
+          people?: number | null
+          status?: string
+          subtype?: string | null
+          updated_at?: string
+          whatsapp_target?: string | null
+        }
+        Update: {
+          budget?: string | null
+          category?: string
+          created_at?: string
+          customer_name?: string
+          customer_phone?: string
+          destination?: string | null
+          duration_days?: number | null
+          estimate_xof?: number | null
+          event_date?: string | null
+          id?: string
+          notes?: string | null
+          options?: Json | null
+          people?: number | null
+          status?: string
+          subtype?: string | null
+          updated_at?: string
+          whatsapp_target?: string | null
         }
         Relationships: []
       }

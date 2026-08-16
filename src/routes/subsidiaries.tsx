@@ -85,7 +85,7 @@ function SubsidiariesPage() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] as const }}
           >
             <span className="mb-4 block text-[10px] font-semibold tracking-[0.4em] text-gold uppercase">
               L'écosystème Eburnie

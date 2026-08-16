@@ -380,6 +380,93 @@ export type Database = {
         }
         Relationships: []
       }
+      corp_contact_messages: {
+        Row: {
+          company: string | null
+          created_at: string
+          email: string
+          id: string
+          kind: string
+          message: string
+          name: string
+          phone: string | null
+          subject: string
+        }
+        Insert: {
+          company?: string | null
+          created_at?: string
+          email: string
+          id?: string
+          kind?: string
+          message: string
+          name: string
+          phone?: string | null
+          subject: string
+        }
+        Update: {
+          company?: string | null
+          created_at?: string
+          email?: string
+          id?: string
+          kind?: string
+          message?: string
+          name?: string
+          phone?: string | null
+          subject?: string
+        }
+        Relationships: []
+      }
+      corp_job_applications: {
+        Row: {
+          cover_letter: string
+          created_at: string
+          email: string
+          full_name: string
+          id: string
+          linkedin_url: string | null
+          phone: string | null
+          position_title: string
+        }
+        Insert: {
+          cover_letter: string
+          created_at?: string
+          email: string
+          full_name: string
+          id?: string
+          linkedin_url?: string | null
+          phone?: string | null
+          position_title: string
+        }
+        Update: {
+          cover_letter?: string
+          created_at?: string
+          email?: string
+          full_name?: string
+          id?: string
+          linkedin_url?: string | null
+          phone?: string | null
+          position_title?: string
+        }
+        Relationships: []
+      }
+      corp_newsletter_subscribers: {
+        Row: {
+          created_at: string
+          email: string
+          id: string
+        }
+        Insert: {
+          created_at?: string
+          email: string
+          id?: string
+        }
+        Update: {
+          created_at?: string
+          email?: string
+          id?: string
+        }
+        Relationships: []
+      }
       estimations_cargo: {
         Row: {
           created_at: string

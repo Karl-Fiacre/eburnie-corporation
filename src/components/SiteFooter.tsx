@@ -1,4 +1,5 @@
 import { Link } from "@tanstack/react-router";
+import { NewsletterForm } from "@/components/NewsletterForm";
 import { Facebook, Linkedin, Instagram, Mail } from "lucide-react";
 import logoAsset from "@/assets/eburnie-logo.png.asset.json";
 
@@ -86,20 +87,7 @@ export function SiteFooter() {
           <p className="text-sm text-white/65 mb-4">
             Recevez nos actualités corporate et opportunités d'investissement.
           </p>
-          <form
-            onSubmit={(e) => e.preventDefault()}
-            className="flex border border-white/15 focus-within:border-gold transition-colors"
-          >
-            <input
-              type="email"
-              required
-              placeholder="Votre email"
-              className="flex-1 bg-transparent px-4 py-3 text-sm placeholder:text-white/40 focus:outline-none"
-            />
-            <button className="px-5 bg-gradient-gold text-prestige text-sm font-semibold">
-              OK
-            </button>
-          </form>
+          <NewsletterForm />
         </div>
       </div>
 

@@ -65,7 +65,7 @@ function InvestorsPage() {
           <h2 className="mt-4 text-3xl md:text-4xl font-bold">Parlons de votre projet.</h2>
           <p className="mt-4 text-muted-foreground">Notre équipe relations investisseurs vous répond sous 48h.</p>
           <div className="mt-10">
-            <ContactForm subject="Demande investisseur" />
+            <ContactForm subject="Demande investisseur" kind="investisseur" />
           </div>
         </div>
       </section>

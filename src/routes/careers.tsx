@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import heroImg from "@/assets/hero-careers.jpg";
 import { PageHero } from "@/components/PageHero";
+import { JobApplicationDialog } from "@/components/JobApplicationDialog";
 import { Briefcase, GraduationCap, FileText, MapPin } from "lucide-react";
 
 import { SITE_URL, seoLinks } from "@/lib/site";
@@ -74,9 +75,7 @@ function CareersPage() {
                     <span className="flex items-center gap-1"><MapPin size={12} />{j.loc}</span>
                   </div>
                 </div>
-                <button className="px-5 py-2.5 bg-prestige text-white text-sm font-semibold hover:bg-gradient-gold hover:text-prestige transition-all">
-                  Postuler
-                </button>
+                <JobApplicationDialog position={j.title} />
               </div>
             ))}
           </div>

@@ -16,7 +16,6 @@ import {
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
@@ -197,9 +196,9 @@ export function JobApplicationDialog({
                 </FormItem>
               )}
             />
-            <FormDescription>
+            <p className="text-xs text-muted-foreground">
               Envoyez votre CV à rh@eburniecorporation.com en rappelant l'intitulé du poste.
-            </FormDescription>
+            </p>
             <button
               type="submit"
               disabled={loading}

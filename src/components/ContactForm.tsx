@@ -8,7 +8,6 @@ import { supabase } from "@/integrations/supabase/client";
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
@@ -224,10 +223,10 @@ export function ContactForm({ subject = "", kind = "contact" }: Props) {
             </span>
           )}
         </div>
-        <FormDescription>
+        <p className="text-xs text-muted-foreground">
           Les champs marqués d'un astérisque sont obligatoires. Vos données ne sont utilisées que pour
           traiter votre demande.
-        </FormDescription>
+        </p>
       </form>
     </Form>
   );

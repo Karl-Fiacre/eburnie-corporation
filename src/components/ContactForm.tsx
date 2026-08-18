@@ -95,8 +95,7 @@ export function ContactForm({ subject = "", kind = "contact" }: Props) {
 
   return (
     <Form {...form}>
-      <pre data-debug>{JSON.stringify(Object.keys(form.formState.errors))}</pre>
-      <form onSubmit={form.handleSubmit(onSubmit, (e) => console.log("INVALID", JSON.stringify(e)))} className="space-y-6" noValidate>
+      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6" noValidate>
         <div className="grid md:grid-cols-2 gap-5">
           <FormField
             control={form.control}

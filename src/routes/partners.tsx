@@ -62,7 +62,7 @@ function PartnersPage() {
           <div className="text-xs tracking-[0.32em] text-gold">DEVENIR PARTENAIRE</div>
           <h2 className="mt-4 text-3xl md:text-4xl font-bold">Proposez votre collaboration.</h2>
           <div className="mt-10">
-            <ContactForm subject="Demande de partenariat" />
+            <ContactForm subject="Demande de partenariat" kind="partenariat" />
           </div>
         </div>
       </section>

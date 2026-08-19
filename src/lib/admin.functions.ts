@@ -124,11 +124,17 @@ export const deleteNews = createServerFn({ method: "POST" })
     return { ok: true as const };
   });
 
+type DeletableTable = "corp_contact_messages" | "corp_job_applications" | "corp_newsletter_subscribers";
+
 export const deleteRecord = createServerFn({ method: "POST" })
-  .inputValidator((data: { table: string; id: string }) => {
-    const allowed = ["corp_contact_messages", "corp_job_applications", "corp_newsletter_subscribers"];
+  .inputValidator((data: { table: DeletableTable; id: string }) => {
+    const allowed: DeletableTable[] = [
+      "corp_contact_messages",
+      "corp_job_applications",
+      "corp_newsletter_subscribers",
+    ];
     if (!allowed.includes(data.table)) throw new Error("Table non autorisée");
-    return { table: data.table as (typeof allowed)[number], id: String(data.id) };
+    return { table: data.table, id: String(data.id) };
   })
   .handler(async ({ data }) => {
     await requireUnlocked();
@@ -137,3 +143,4 @@ export const deleteRecord = createServerFn({ method: "POST" })
     if (error) throw new Error(error.message);
     return { ok: true as const };
   });
+

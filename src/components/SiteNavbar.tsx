@@ -44,26 +44,28 @@ export function SiteNavbar() {
           </div>
         </Link>
 
-        <nav className="hidden lg:flex items-center gap-2.5">
-          {links.map((l) => (
-            <Link
-              key={l.to}
-              to={l.to}
-              activeOptions={{ exact: l.to === "/" }}
-              className="btn-3d-prestige"
-              activeProps={{ className: "btn-3d-active" }}
-            >
-              {l.label}
-            </Link>
-          ))}
-        </nav>
+        <div className="hidden lg:flex items-center gap-2.5">
+          <nav className="flex items-center gap-2.5">
+            {links.map((l) => (
+              <Link
+                key={l.to}
+                to={l.to}
+                activeOptions={{ exact: l.to === "/" }}
+                className="btn-3d-prestige"
+                activeProps={{ className: "btn-3d-active" }}
+              >
+                {l.label}
+              </Link>
+            ))}
+          </nav>
 
-        <Link
-          to="/partners"
-          className="hidden lg:inline-flex btn-3d-gold"
-        >
-          Devenir partenaire
-        </Link>
+          <Link
+            to="/partners"
+            className="inline-flex btn-3d-gold"
+          >
+            Devenir partenaire
+          </Link>
+        </div>
 
         <button
           aria-label="Menu"

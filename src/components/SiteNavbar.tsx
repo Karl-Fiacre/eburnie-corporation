@@ -44,24 +44,23 @@ export function SiteNavbar() {
           </div>
         </Link>
 
-        <nav className="hidden lg:flex items-center gap-1.5">
+        <nav className="hidden lg:flex items-center gap-2.5">
           {links.map((l) => (
             <Link
               key={l.to}
               to={l.to}
               activeOptions={{ exact: l.to === "/" }}
-              className="px-3.5 py-2 rounded-full text-sm font-semibold text-foreground/80 bg-foreground/[0.04] hover:bg-prestige hover:text-white transition-colors"
-              activeProps={{ className: "bg-prestige text-white" }}
+              className="btn-3d-prestige"
+              activeProps={{ className: "btn-3d-active" }}
             >
               {l.label}
             </Link>
           ))}
         </nav>
 
-
         <Link
           to="/partners"
-          className="hidden lg:inline-flex items-center justify-center px-5 py-2.5 text-sm font-semibold bg-prestige text-white hover:bg-gradient-gold hover:text-prestige transition-all rounded-sm border border-prestige"
+          className="hidden lg:inline-flex btn-3d-gold"
         >
           Devenir partenaire
         </Link>
@@ -76,14 +75,16 @@ export function SiteNavbar() {
       </div>
 
       {open && (
-        <div className="lg:hidden bg-background border-t border-border">
-          <nav className="px-6 py-4 flex flex-col">
+        <div className="lg:hidden bg-background/98 border-t border-border px-4 py-3">
+          <nav className="flex flex-col">
             {links.map((l) => (
               <Link
                 key={l.to}
                 to={l.to}
                 onClick={() => setOpen(false)}
-                className="py-3 text-sm font-medium border-b border-border/60 last:border-0"
+                activeOptions={{ exact: l.to === "/" }}
+                className="btn-3d-mobile mb-2 last:mb-0"
+                activeProps={{ className: "btn-3d-active" }}
               >
                 {l.label}
               </Link>

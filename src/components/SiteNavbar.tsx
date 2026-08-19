@@ -75,14 +75,16 @@ export function SiteNavbar() {
       </div>
 
       {open && (
-        <div className="lg:hidden bg-background border-t border-border">
-          <nav className="px-6 py-4 flex flex-col">
+        <div className="lg:hidden bg-background/98 border-t border-border px-4 py-3">
+          <nav className="flex flex-col">
             {links.map((l) => (
               <Link
                 key={l.to}
                 to={l.to}
                 onClick={() => setOpen(false)}
-                className="py-3 text-sm font-medium border-b border-border/60 last:border-0"
+                activeOptions={{ exact: l.to === "/" }}
+                className="btn-3d-mobile mb-2 last:mb-0"
+                activeProps={{ className: "btn-3d-active" }}
               >
                 {l.label}
               </Link>

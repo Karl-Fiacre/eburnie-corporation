@@ -8,7 +8,6 @@ const links = [
   { to: "/about", label: "À Propos" },
   { to: "/subsidiaries", label: "Nos Filiales" },
   { to: "/investors", label: "Investisseurs" },
-  { to: "/partners", label: "Partenaires" },
   { to: "/news", label: "Actualités" },
   { to: "/careers", label: "Carrières" },
   { to: "/contact", label: "Contact" },

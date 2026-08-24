@@ -31,7 +31,7 @@ export function SiteNavbar() {
       }`}
     >
       <div className="mx-auto max-w-7xl px-6 lg:px-10 h-20 flex items-center justify-between">
-        <Link to="/" className="flex items-center gap-3 group" onClick={() => setOpen(false)}>
+        <Link to="/" className="flex items-center gap-3 group shrink-0" onClick={() => setOpen(false)}>
           <img src={logoAsset.url} alt="Eburnie Corporation" className="h-12 w-12 object-contain" />
           <div className="leading-tight">
             <div className="font-display font-bold text-sm tracking-[0.18em] text-foreground">

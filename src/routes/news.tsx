@@ -3,6 +3,8 @@ import heroImg from "@/assets/hero-news.jpg";
 import { PageHero } from "@/components/PageHero";
 import { useState } from "react";
 import { Search } from "lucide-react";
+import { useSuspenseQuery, queryOptions } from "@tanstack/react-query";
+import { listPublicNews } from "@/lib/news.functions";
 
 import { SITE_URL, seoLinks } from "@/lib/site";
 
@@ -29,21 +31,27 @@ export const Route = createFileRoute("/news")({
     ],
     links: seoLinks("/news"),
   }),
+  loader: ({ context }) => context.queryClient.ensureQueryData(newsQueryOptions),
   component: NewsPage,
+});
+
+const newsQueryOptions = queryOptions({
+  queryKey: ["public-news"],
+  queryFn: () => listPublicNews(),
 });
 
 const categories = ["Tous", "Groupe", "Boutique", "Auto", "Immobilier", "China Deals", "Cargo", "Event"];
 
-const articles = [
-  { cat: "Groupe", title: "Eburnie Corporation officialise sa structure de holding multisectorielle en Côte d'Ivoire", date: "5 juin 2026", excerpt: "Le groupe finalise sa gouvernance et confirme son ancrage ivoirien." },
-  { cat: "Cargo", title: "Eburnie Cargo renforce son réseau logistique au départ d'Abidjan", date: "28 mai 2026", excerpt: "Nouveaux corridors logistiques au départ du port d'Abidjan." },
-  { cat: "Boutique", title: "Eburnie Boutique dépasse les 10 000 références produits", date: "20 mai 2026", excerpt: "Une croissance soutenue du catalogue sur le marché ivoirien." },
-  { cat: "China Deals", title: "Mission de sourcing stratégique à Guangzhou", date: "12 mai 2026", excerpt: "Renforcement des partenariats fournisseurs chinois pour les importateurs ivoiriens." },
-  { cat: "Immobilier", title: "Lancement du premier projet résidentiel premium à Abidjan", date: "1 mai 2026", excerpt: "Eburnie Immobilier ouvre la commercialisation de sa première résidence." },
-  { cat: "Event", title: "Forum ivoirien des investisseurs 2026", date: "20 avril 2026", excerpt: "Eburnie Event accueille 500 décideurs économiques à Abidjan." },
-];
 
 function NewsPage() {
+  const { data: rows } = useSuspenseQuery(newsQueryOptions);
+  const articles = rows.map((r) => ({
+    cat: r.category,
+    title: r.title,
+    excerpt: r.excerpt ?? "",
+    date: new Date(r.published_at).toLocaleDateString("fr-FR", { day: "numeric", month: "long", year: "numeric" }),
+    image: r.image_url,
+  }));
   const [q, setQ] = useState("");
   const [cat, setCat] = useState("Tous");
   const filtered = articles.filter(
@@ -85,6 +93,9 @@ function NewsPage() {
               <article key={a.title} className="group cursor-pointer">
                 <div className="aspect-[16/10] bg-gradient-prestige relative overflow-hidden">
                   <div className="absolute inset-0 opacity-30" style={{ backgroundImage: "radial-gradient(circle at 70% 30%, var(--gold) 0%, transparent 50%)" }} />
+                  {a.image && (
+                    <img src={a.image} alt={a.title} loading="lazy" className="absolute inset-0 h-full w-full object-cover" />
+                  )}
                   <div className="absolute top-4 left-4 text-[10px] tracking-[0.25em] bg-gold text-prestige px-2.5 py-1">{a.cat.toUpperCase()}</div>
                 </div>
                 <div className="mt-5">

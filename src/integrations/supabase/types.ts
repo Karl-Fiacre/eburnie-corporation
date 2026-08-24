@@ -992,6 +992,7 @@ export type Database = {
       }
       products_china_deals: {
         Row: {
+          availability: string
           category_id: string | null
           created_at: string
           delay_air: string | null
@@ -1016,6 +1017,7 @@ export type Database = {
           weight_kg: number | null
         }
         Insert: {
+          availability?: string
           category_id?: string | null
           created_at?: string
           delay_air?: string | null
@@ -1040,6 +1042,7 @@ export type Database = {
           weight_kg?: number | null
         }
         Update: {
+          availability?: string
           category_id?: string | null
           created_at?: string
           delay_air?: string | null

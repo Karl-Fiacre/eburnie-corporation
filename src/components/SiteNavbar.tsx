@@ -43,7 +43,7 @@ export function SiteNavbar() {
           </div>
         </Link>
 
-        <div className="hidden lg:flex items-center gap-2.5">
+        <div className="hidden lg:flex items-center gap-2.5 ml-auto">
           <nav className="flex items-center gap-2.5">
             {links.map((l) => (
               <Link

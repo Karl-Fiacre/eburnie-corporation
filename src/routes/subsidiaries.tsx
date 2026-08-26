@@ -1,10 +1,12 @@
 import { createFileRoute } from "@tanstack/react-router";
 import heroImg from "@/assets/hero-subsidiaries.jpg";
 import { PageHero } from "@/components/PageHero";
+import { TiltCard3D } from "@/components/TiltCard3D";
 import { ShoppingBag, Car, Building2, Globe2, Truck, CalendarRange, ArrowUpRight } from "lucide-react";
 import { motion } from "framer-motion";
 
 import { SITE_URL, seoLinks } from "@/lib/site";
+
 
 export const Route = createFileRoute("/subsidiaries")({
   head: () => ({

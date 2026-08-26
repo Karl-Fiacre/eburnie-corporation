@@ -130,7 +130,7 @@ export function SiteNavbar() {
             animate={{ x: 0 }}
             exit={{ x: "100%" }}
             transition={{ type: "spring", damping: 28, stiffness: 260 }}
-            className="lg:hidden fixed top-0 right-0 bottom-0 z-[60] w-[min(85vw,20rem)] bg-gradient-to-b from-white via-white to-secondary/40 shadow-premium border-l border-border flex flex-col"
+            className="lg:hidden fixed top-0 right-0 h-screen z-[60] w-[min(85vw,20rem)] bg-gradient-to-b from-white via-white to-secondary/40 shadow-premium border-l border-border flex flex-col"
           >
             <div className="h-20 flex items-center justify-between px-6 border-b border-border bg-white/80 backdrop-blur-md">
               <span className="font-display font-bold text-sm tracking-[0.18em] text-prestige">MENU</span>

@@ -36,10 +36,11 @@ export function SiteNavbar() {
 
   return (
     <>
-      className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 bg-background/95 backdrop-blur-xl border-b ${
-        scrolled ? "border-border shadow-md" : "border-border/60 shadow-sm"
-      }`}
-    >
+      <header
+        className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 bg-background/95 backdrop-blur-xl border-b ${
+          scrolled ? "border-border shadow-md" : "border-border/60 shadow-sm"
+        }`}
+      >
       <div className="mx-auto max-w-7xl px-6 lg:px-10 h-20 flex items-center justify-between">
         <Link to="/" className="flex items-center gap-3 group shrink-0" onClick={() => setOpen(false)}>
           <img src={logoAsset.url} alt="Eburnie Corporation" className="h-12 w-12 object-contain" />

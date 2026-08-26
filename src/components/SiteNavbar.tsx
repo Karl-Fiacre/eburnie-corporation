@@ -196,5 +196,6 @@ export function SiteNavbar() {
         </>
       )}
     </AnimatePresence>
+  </>
   );
 }

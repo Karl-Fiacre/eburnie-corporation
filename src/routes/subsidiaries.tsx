@@ -1,10 +1,12 @@
 import { createFileRoute } from "@tanstack/react-router";
 import heroImg from "@/assets/hero-subsidiaries.jpg";
 import { PageHero } from "@/components/PageHero";
+import { TiltCard3D } from "@/components/TiltCard3D";
 import { ShoppingBag, Car, Building2, Globe2, Truck, CalendarRange, ArrowUpRight } from "lucide-react";
 import { motion } from "framer-motion";
 
 import { SITE_URL, seoLinks } from "@/lib/site";
+
 
 export const Route = createFileRoute("/subsidiaries")({
   head: () => ({
@@ -109,46 +111,50 @@ function SubsidiariesPage() {
             aria-label="Liste des filiales du groupe Eburnie Corporation"
           >
             {subs.map((s) => (
-              <motion.a
+              <motion.div
                 key={s.url}
-                href={s.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group relative block overflow-hidden border border-border bg-card p-10 transition-all duration-700 ease-out hover:-translate-y-3 hover:border-gold/30 hover:shadow-gold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2"
                 variants={itemVariants}
                 role="listitem"
-                aria-label={`${s.name} — ${s.tag}. Ouvrir le site dans un nouvel onglet.`}
               >
-                {/* Animated gold bottom border */}
-                <div className="absolute inset-x-0 bottom-0 h-[2px] origin-center scale-x-0 bg-gradient-to-r from-transparent via-gold to-transparent transition-transform duration-500 group-hover:scale-x-100" />
+                <TiltCard3D
+                  href={s.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  ariaLabel={`${s.name} — ${s.tag}. Ouvrir le site dans un nouvel onglet.`}
+                  className="h-full"
+                >
+                  <div className="relative p-10 h-full flex flex-col">
+                    {/* Animated gold bottom border */}
+                    <div className="absolute inset-x-0 bottom-0 h-[2px] origin-center scale-x-0 bg-gradient-to-r from-transparent via-gold to-transparent transition-transform duration-500 group-hover/card:scale-x-100" />
 
-                <div className="relative z-10">
-                  <div className="flex items-center justify-between">
-                    <span className="text-[10px] font-semibold tracking-[0.32em] text-gold">{s.tag}</span>
-                    <div className="flex h-9 w-9 items-center justify-center rounded-full border border-border bg-background text-muted-foreground transition-all duration-500 group-hover:border-gold group-hover:bg-gold group-hover:text-primary-foreground">
-                      <ArrowUpRight size={18} className="transition-transform duration-500 group-hover:rotate-45" />
+                    <div className="flex items-center justify-between">
+                      <span className="text-[10px] font-semibold tracking-[0.32em] text-gold">{s.tag}</span>
+                      <div className="flex h-9 w-9 items-center justify-center rounded-full border border-border bg-background text-muted-foreground transition-all duration-500 group-hover/card:border-gold group-hover/card:bg-gold group-hover/card:text-primary-foreground">
+                        <ArrowUpRight size={18} className="transition-transform duration-500 group-hover/card:rotate-45" />
+                      </div>
+                    </div>
+
+                    <div className="mt-8 h-16 w-16 flex items-center justify-center rounded-sm border border-border bg-secondary text-prestige transition-all duration-500 group-hover/card:border-gold group-hover/card:bg-gold group-hover/card:text-primary-foreground">
+                      <s.icon size={28} className="transition-transform duration-500 group-hover/card:scale-110 group-hover/card:rotate-6" />
+                    </div>
+
+                    <h3 className="mt-6 font-display text-xl font-bold tracking-wide text-card-foreground transition-colors duration-300 group-hover/card:text-gold">
+                      {s.name}
+                    </h3>
+                    <p className="mt-4 text-sm leading-relaxed text-muted-foreground flex-1">
+                      {s.desc}
+                    </p>
+
+                    <div className="mt-8 flex items-center text-[10px] font-bold tracking-[0.2em] text-gold opacity-0 transition-all duration-500 translate-y-2 group-hover/card:opacity-100 group-hover/card:translate-y-0">
+                      Découvrir
+                      <ArrowUpRight size={16} className="ml-2" />
                     </div>
                   </div>
-
-                  <div className="mt-8 h-16 w-16 flex items-center justify-center rounded-sm border border-border bg-secondary text-prestige transition-all duration-500 group-hover:border-gold group-hover:bg-gold group-hover:text-primary-foreground">
-                    <s.icon size={28} className="transition-transform duration-500 group-hover:scale-110" />
-                  </div>
-
-                  <h3 className="mt-6 font-display text-xl font-bold tracking-wide text-card-foreground transition-colors duration-300 group-hover:text-gold">
-                    {s.name}
-                  </h3>
-                  <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-                    {s.desc}
-                  </p>
-
-                  <div className="mt-8 flex items-center text-[10px] font-bold tracking-[0.2em] text-gold opacity-0 transition-all duration-500 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0">
-                    Découvrir
-                    <ArrowUpRight size={16} className="ml-2" />
-                  </div>
-                </div>
-              </motion.a>
+                </TiltCard3D>
+              </motion.div>
             ))}
           </motion.div>
+
         </div>
       </section>
     </>
